@@ -1,42 +1,44 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React from "react";
+import { Link } from "gatsby";
+import "bootstrap/dist/css/bootstrap.min.css";
+import {
+  Navbar,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from "reactstrap";
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+class Header extends React.Component {
+  render() {
+    return (
+      <div>
+        <Navbar color="light" light expand="md">
+          <NavbarBrand>
+            <Link to="/" className="nav-link">
+              Zach Ingbretsen
+            </Link>
+          </NavbarBrand>
+          <Nav className="mr-auto" navbar>
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+                Blog
+              </DropdownToggle>
+              <DropdownMenu right>
+                <Link to="/blog/docker-gives-you-superpowers">
+                  <DropdownItem>Docker</DropdownItem>
+                </Link>
+              </DropdownMenu>
+            </UncontrolledDropdown>
+        <Link to="/whoami">whoami</Link>
+          </Nav>
+        </Navbar>
+      </div>
+    );
+  }
 }
 
 export default Header
