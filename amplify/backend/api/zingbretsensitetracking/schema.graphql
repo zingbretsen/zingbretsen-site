@@ -1,0 +1,16 @@
+type Todo @model
+  @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  name: String!
+  description: String
+  done: Boolean
+}
+
+type Weighing @model
+  @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  weight: Float
+  bmi: Float
+  rm: Integer
+  bodyage: Integer
+}

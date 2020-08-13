@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import { Divider } from 'antd';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   Navbar,
@@ -18,22 +19,20 @@ class Header extends React.Component {
       <div>
         <Navbar color="light" light expand="md">
           <NavbarBrand>
-            <Link to="/" className="nav-link">
-              Zach Ingbretsen
-            </Link>
+            Zach Ingbretsen
           </NavbarBrand>
-          <Nav className="mr-auto" navbar>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Blog
-              </DropdownToggle>
-              <DropdownMenu right>
-                <Link to="/blog/docker-gives-you-superpowers">
-                  <DropdownItem>Docker</DropdownItem>
-                </Link>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-        <Link to="/whoami">whoami</Link>
+          <Nav navbar>
+            <NavItem>
+              <Link className="nav-link" to="/">Home</Link>
+            </NavItem>
+            <Divider type="Vertical"/>
+            <NavItem>
+              <Link className="nav-link" to="/blog">Blog</Link>
+            </NavItem>
+            <Divider type="Vertical"/>
+            <NavItem>
+              <Link className="nav-link" to="/whoami">whoami</Link>
+            </NavItem>
           </Nav>
         </Navbar>
       </div>
@@ -41,4 +40,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header
+export default Header;

@@ -1,24 +1,20 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from "../components/layout";
+import Image from "../components/image";
+import SEO from "../components/seo";
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image src="snoooow.png"/>
+    <div class="alert alert-warning" role="alert">
+      Warning: Experimental site ahead! Rough edges will be sanded, content will be pushed.
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
-    <Link to="/page-3/">Go to page 3</Link>
-        <br/>
-        <Link to="/d3-page/">Go to d3 demo</Link>
+    <p>This site is being developed with Gatsby/React. There's no backend server! Blog posts will be generated from markdown documents.</p>
+    <p>My first series of blog posts will be my "Superpowers" series: How Vim, Git, and Docker give you superpowers! After that, I will do deeper dives into those topics, as well as Python, R, JavaScript, and cloud infrastructure.</p>
+    <p>If any of that interests you, please check back again soon!</p>
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;
