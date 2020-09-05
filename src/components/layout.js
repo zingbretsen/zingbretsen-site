@@ -1,44 +1,24 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import React from "react";
-import PropTypes from "prop-types";
-import { useStaticQuery, graphql } from "gatsby";
+import Header from './header.js';
+import SEO from './seo.js';
 
-import Header from "./header";
-import Footer from "./footer";
-import "./layout.css";
-import 'antd/dist/antd.css';
+import './layout.css';
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
+deckDeckGoHighlightElement();
 
+const Layout = ({ children, banner, title, description }) => {
+  const banner_class =
+    typeof banner != 'undefined' ? 'alert alert-warning' : 'hidden';
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <Footer/>
-      </div>
-    </>
+    <div width="100%">
+      <SEO title={title} description={description} />
+      <Header />
+      <div className={banner_class}>{banner}</div>
+      <div className="container">{children}</div>
+    </div>
   );
 };
 

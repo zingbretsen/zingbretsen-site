@@ -9,8 +9,12 @@ type Todo @model
 type Weighing @model
   @auth(rules: [{ allow: owner }]) {
   id: ID!
+  date: Date
   weight: Float
   bmi: Float
-  rm: Integer
-  bodyage: Integer
+  fat: Float
+  muscle: Float
+  rm: Int
+  bodyage: Int
+  visceralfat: Int
 }

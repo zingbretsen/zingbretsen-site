@@ -1,41 +1,31 @@
-import React from "react";
-import { Link } from "gatsby";
-import { Divider } from 'antd';
-import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  Navbar,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-} from "reactstrap";
+import React from 'react';
+import { Link } from 'gatsby';
 
 class Header extends React.Component {
   render() {
     return (
-      <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand>
-            Zach Ingbretsen
-          </NavbarBrand>
-          <Nav navbar>
-            <NavItem>
-              <Link className="nav-link" to="/">Home</Link>
-            </NavItem>
-            <Divider type="Vertical"/>
-            <NavItem>
-              <Link className="nav-link" to="/blog">Blog</Link>
-            </NavItem>
-            <Divider type="Vertical"/>
-            <NavItem>
-              <Link className="nav-link" to="/whoami">whoami</Link>
-            </NavItem>
-          </Nav>
-        </Navbar>
-      </div>
+      <nav>
+        <h3 className="brand">Zach Overflow</h3>
+        <Link to="/" activeClassName="active">
+          <p>Home</p>
+        </Link>
+        <Link to="/blog" activeClassName="active" partiallyActive={true}>
+          <p>Blog</p>
+        </Link>
+        <Link to="/whoami" activeClassName="active">
+          <p>Whoami</p>
+        </Link>
+        <Link to="/todo" activeClassName="active">
+          <p>Todo</p>
+        </Link>
+        <Link
+          to="/dashboard"
+          activeClassName="active"
+          activeStyle={{ color: 'red' }}
+        >
+          <p>Dashboard</p>
+        </Link>
+      </nav>
     );
   }
 }

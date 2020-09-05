@@ -34,3 +34,44 @@ export const listTodos = /* GraphQL */ `
     }
   }
 `;
+export const getWeighing = /* GraphQL */ `
+  query GetWeighing($id: ID!) {
+    getWeighing(id: $id) {
+      id
+      weight
+      bmi
+      fat
+      muscle
+      rm
+      bodyage
+      visceralfat
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const listWeighings = /* GraphQL */ `
+  query ListWeighings(
+    $filter: ModelWeighingFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listWeighings(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        weight
+        bmi
+        fat
+        muscle
+        rm
+        bodyage
+        visceralfat
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+`;

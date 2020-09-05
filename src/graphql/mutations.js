@@ -49,3 +49,63 @@ export const deleteTodo = /* GraphQL */ `
     }
   }
 `;
+export const createWeighing = /* GraphQL */ `
+  mutation CreateWeighing(
+    $input: CreateWeighingInput!
+    $condition: ModelWeighingConditionInput
+  ) {
+    createWeighing(input: $input, condition: $condition) {
+      id
+      weight
+      bmi
+      fat
+      muscle
+      rm
+      bodyage
+      visceralfat
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const updateWeighing = /* GraphQL */ `
+  mutation UpdateWeighing(
+    $input: UpdateWeighingInput!
+    $condition: ModelWeighingConditionInput
+  ) {
+    updateWeighing(input: $input, condition: $condition) {
+      id
+      weight
+      bmi
+      fat
+      muscle
+      rm
+      bodyage
+      visceralfat
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const deleteWeighing = /* GraphQL */ `
+  mutation DeleteWeighing(
+    $input: DeleteWeighingInput!
+    $condition: ModelWeighingConditionInput
+  ) {
+    deleteWeighing(input: $input, condition: $condition) {
+      id
+      weight
+      bmi
+      fat
+      muscle
+      rm
+      bodyage
+      visceralfat
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;

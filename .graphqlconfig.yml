@@ -1,6 +1,6 @@
 projects:
   zingbretsensitetracking:
-    schemaPath: src/graphql/schema.json
+    schemaPath: amplify/backend/api/zingbretsensitetracking/build/schema.graphql
     includes:
       - src/graphql/**/*.js
     excludes:
