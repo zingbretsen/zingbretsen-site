@@ -8,7 +8,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `@gatsby-contrib/gatsby-transformer-ipynb`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
