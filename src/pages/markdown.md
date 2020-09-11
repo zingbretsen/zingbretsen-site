@@ -1,3 +1,0 @@
-# HEADER
-
-Some text
