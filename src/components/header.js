@@ -13,7 +13,7 @@ class Header extends React.Component {
           <p>Blog</p>
         </Link>
         <Link to="/whoami" activeClassName="active">
-          <p>Whoami</p>
+          <p>whoami</p>
         </Link>
         <Link to="/todo" activeClassName="active">
           <p>Todo</p>

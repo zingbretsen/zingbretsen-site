@@ -17,9 +17,6 @@ const BlogPage = ({ data }) => {
               onClick={() => navigate(post.path)}
             >
               <div>
-                <div>
-                  <h5>Ohai</h5>
-                </div>
                 <div className="spacer" />
                 <div>
                   <h5>{post.title} </h5>

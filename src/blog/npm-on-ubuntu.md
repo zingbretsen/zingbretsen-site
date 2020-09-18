@@ -6,8 +6,6 @@ title: 'Installing NodeJS and NPM on Ubuntu'
 
 If you are developing websites in 2020 it is highly likely that NodeJS forms at least part of your toolchain. Whether you're developing on the backend or frontend, NodeJS plays an important part in the JavaScript ecosystem.
 
-<!-- ![](./picture.jpg) -->
-
 ## The Problem
 
 That being said, I have faced difficulties using NodeJS and the Node Package Manager (NPM) on Ubuntu, specifically relating to permissions. You can install `nodejs` and `npm` via `apt-get` as follows:

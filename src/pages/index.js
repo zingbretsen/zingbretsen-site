@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 
 import Layout from '../components/layout';
 
-const IndexPage = ({ data }) => {
+const IndexPage = () => {
   return (
     <Layout
       title="Home"
@@ -12,7 +12,6 @@ const IndexPage = ({ data }) => {
         'Warning: Experimental site ahead! Rough edges will be sanded, content will be pushed.'
       }
     >
-      {/* <Img fluid={data.file.childImageSharp.fluid} /> */}
       <p>
         This site is being developed with Gatsby/React. There's no backend
         server! Blog posts will be generated from markdown documents.
@@ -29,17 +28,3 @@ const IndexPage = ({ data }) => {
 };
 
 export default IndexPage;
-
-export const query = graphql`
-  query {
-    file(relativePath: { eq: "dragonfly.jpg" }) {
-      childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`;
