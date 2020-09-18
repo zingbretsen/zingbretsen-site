@@ -15,16 +15,6 @@ class Header extends React.Component {
         <Link to="/whoami" activeClassName="active">
           <p>whoami</p>
         </Link>
-        <Link to="/todo" activeClassName="active">
-          <p>Todo</p>
-        </Link>
-        <Link
-          to="/dashboard"
-          activeClassName="active"
-          activeStyle={{ color: 'red' }}
-        >
-          <p>Dashboard</p>
-        </Link>
       </nav>
     );
   }
