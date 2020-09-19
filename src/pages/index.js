@@ -6,12 +6,7 @@ import Layout from '../components/layout';
 
 const IndexPage = () => {
   return (
-    <Layout
-      title="Home"
-      banner={
-        'Warning: Experimental site ahead! Rough edges will be sanded, content will be pushed.'
-      }
-    >
+    <Layout title="Home">
       <p>
         This site is being developed with Gatsby/React. There's no backend
         server! Blog posts will be generated from markdown documents.
