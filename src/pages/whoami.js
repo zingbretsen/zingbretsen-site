@@ -1,7 +1,7 @@
-import React from 'react';
-import { Img, useStaticQuery, graphql } from 'gatsby';
+import React from "react";
+import { Img, useStaticQuery, graphql } from "gatsby";
 
-import Layout from '../components/layout';
+import Layout from "../components/layout";
 
 const WhoamiPage = () => {
   const { file } = useStaticQuery(
@@ -26,14 +26,14 @@ const WhoamiPage = () => {
         src={file.childImageSharp.fixed.src}
         className="whoami-image"
         style={{
-          float: 'right',
-          margin: '1em',
-          borderRadius: '5em',
+          float: "right",
+          margin: "1em",
+          borderRadius: "5em",
         }}
       />
       <p>
         Professional nerd, foodie, and photographer. I am a data scientist with
-        a passion for problem solving, currently working at the intersection of{' '}
+        a passion for problem solving, currently working at the intersection of{" "}
         <b>Data Science</b>, <b>DevOps</b>, and <b>App Development</b>.
       </p>
       <p>
@@ -52,9 +52,9 @@ const WhoamiPage = () => {
         Harvard.
       </p>
       <p>
-        I continue to have a passion for <b>automation</b> and <b>data</b>{' '}
+        I continue to have a passion for <b>automation</b> and <b>data</b>{" "}
         <b>analysis</b>. I believe that systems should be set up so that the
-        best way to do something is also the easy way to do it. <b>Python</b>{' '}
+        best way to do something is also the easy way to do it. <b>Python</b>{" "}
         was the first programming language I loved, and <b>R</b> has become a
         new favorite.
       </p>

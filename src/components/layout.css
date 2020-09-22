@@ -96,7 +96,7 @@ nav h3 {
   padding-left: 1rem;
 }
 
-div[data-test='greetings-nav'] {
+div[data-test="greetings-nav"] {
   position: absolute;
   height: 3rem;
   display: flex;
@@ -108,15 +108,15 @@ div[data-test='greetings-nav'] {
   width: 10rem;
 }
 
-div[data-test='greetings-nav'] span div {
+div[data-test="greetings-nav"] span div {
   display: none;
 }
 
-div[data-test='greetings-nav-right'] {
+div[data-test="greetings-nav-right"] {
   justify-content: right;
 }
 
-button[data-test='sign-out-button'] {
+button[data-test="sign-out-button"] {
   justify-content: right;
   height: 3rem;
 }
@@ -134,7 +134,7 @@ button[data-test='sign-out-button'] {
 }
 
 .active p {
-  background-color: 'black';
+  background-color: "black";
   border-bottom: 2px solid var(--viridis-2);
 }
 

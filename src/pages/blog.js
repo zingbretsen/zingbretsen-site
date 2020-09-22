@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link, graphql, Image, navigate } from 'gatsby';
+import React from "react";
+import { Link, graphql, Image, navigate } from "gatsby";
 
-import Layout from '../components/layout';
+import Layout from "../components/layout";
 
 const BlogPage = ({ data }) => {
   return (
