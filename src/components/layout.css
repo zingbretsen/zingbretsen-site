@@ -145,3 +145,11 @@ button[data-test="sign-out-button"] {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+
+.hoverable {
+  background-color: #CEF6
+}
+
+.highlight {
+  background-color: #fde72544
+}
