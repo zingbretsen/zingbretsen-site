@@ -1,6 +1,6 @@
 ---
 path: '/blog/vim-gives-you-superpowers'
-date: '2021-02-21
+date: '2021-02-21'
 title: 'Vim Gives You Superpowers'
 ---
 
@@ -47,29 +47,29 @@ You may be thinking "that sounds like a lot of work to memorize all those keybin
 
  There keys that you might use to *do* something:
 
- - `d` is to `d`elete some specified text
- - `c` is to `c`hange some speficied text (it will delete the text and bring you into insert mode to type the new text)
- - `y` is to `y`ank (copy) text
- - `p` is to `p`ut (paste) text
- - `u` is to `u`ndo
+- `d` is to `d`elete some specified text
+- `c` is to `c`hange some speficied text (it will delete the text and bring you into insert mode to type the new text)
+- `y` is to `y`ank (copy) text
+- `p` is to `p`ut (paste) text
+- `u` is to `u`ndo
 
 There are some keys that you might use to move around the page:
 
- - `w` is to go forward by one `w`ord
- - `b` is to go `b`ackward by one word
- - `)` is to jump to the next sentence (okay, they can't all be mnemonic winners)
- - `(` is to jump to the previous sentence
- - `}` is to jump to the next paragraph/whitespace break
- - `{` is to jump to the previous paragraph/whitespace break
+- `w` is to go forward by one `w`ord
+- `b` is to go `b`ackward by one word
+- `)` is to jump to the next sentence (okay, they can't all be mnemonic winners)
+- `(` is to jump to the previous sentence
+- `}` is to jump to the next paragraph/whitespace break
+- `{` is to jump to the previous paragraph/whitespace break
 
 Other keys put you into a specific mode:
 
- - `i` to enter `i`nsert mode
- - `v` to enter `v`isual mode
+- `i` to enter `i`nsert mode
+- `v` to enter `v`isual mode
 
 ## Composability
 
-The real power of vim's keybindings is that they *combine* with each other in predictable but powerful ways. If you know what the keys mean separately, you can guess what they will do when combined together. Once you learn a basic set of *actions* and *motions*, you can start to combine them in really useful ways. 
+The real power of vim's keybindings is that they *combine* with each other in predictable but powerful ways. If you know what the keys mean separately, you can guess what they will do when combined together. Once you learn a basic set of *actions* and *motions*, you can start to combine them in really useful ways.
 
 ### Combining Actions and Motions
 
