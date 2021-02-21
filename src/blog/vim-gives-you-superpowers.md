@@ -22,11 +22,11 @@ Efficiency is core to the vim ethos. It is designed to get you where you want to
 
 In order to achieve this, vim was designed as a modal and extensible editor.
 
-### A Modal Text Editor
+## A Modal Text Editor
 
 One aspect of vim that trips people up is that it is a `modal` text editor. In other words, there are various "modes" with specific behaviors. Practically, what this means is that pressing a given key on your keyboard will do different things depending on what mode you are in.
 
-#### "But that's confusing"
+### "But that's confusing"
 
 But is it, though? Let's not compare vim to other text editors for now. Instead, let's compare vim to playing a video game on your computer. When you are playing a game, pressing the WASD keys likely won't type those letters into the in-game world. They probably move you around that world.
 
@@ -38,11 +38,11 @@ Depending on what mode you're, in pressing a key on your keyboard will do differ
 
 This is exactly the same in vim! Pressing `w` in `normal` mode will move you forward one `w`ord, and pressing `w` in `insert` mode will enter a literal "w"!
 
-#### The Takeaway
+### The Takeaway
 
 In vim, keys are bound to different actions depending on what mode you're in. *Normal mode* is the mode that vim starts in, and it's all about moving around your file and manipulating text. *Insert mode* is the mode that will allow you to type characters into your document. If you are not actively typing code/words, you will likely want to be in normal mode because it will allow you to move around your file(s) and refactor easily. It's like having every key on your keyboard be a hotkey for some kind of action.
 
-### Mnemonics
+## Mnemonics
 You may be thinking "that sounds like a lot of work to memorize all those keybindings". Well, yes and no. There are a lot of things you can do in vim. A lot a lot. But one of the key things about vim is that they took great pains to make the keybindings follow a logical pattern. If you say the thing you want to do in your head, that will go a long way to helping you memorize the keybindings until they become muscle memory.
 
  There keys that you might use to *do* something:
@@ -67,11 +67,11 @@ Other keys put you into a specific mode:
  - `i` to enter `i`nsert mode
  - `v` to enter `v`isual mode
 
-### Composability
+## Composability
 
 The real power of vim's keybindings is that they *combine* with each other in predictable but powerful ways. If you know what the keys mean separately, you can guess what they will do when combined together. Once you learn a basic set of *actions* and *motions*, you can start to combine them in really useful ways. 
 
-#### Combining Actions and Motions
+### Combining Actions and Motions
 
 If you press `d` to `d`elete something, you have to tell vim *what* you want to delete.
 
@@ -83,7 +83,7 @@ If you remember what `d` means, and what `w`, `b`, and `}`, you can figure out `
 
 Once you get comfortable with these, there are a ton of motions and text objects that you can operate on. For example you may want to `ci)`, or "change everything inside the parentheses". Or you may want to `dap`, or "delete around the paragraph" to delete the whole block of text (including the surrounding whitespace). You could then `Gp` to "`G`o to the bottom of the page and `p`aste your text".
 
-#### Other Common Patterns
+### Other Common Patterns
 There are other useful conventions that many commands follow. Often times, pressing an action key twice will do that action on a whole line. `dd` will delete a whole line, regardless of where your cursor is. `yy` will yank a whole line. `cc` will change a whole line, etc.
 
 Pressing a capital action key will often do that action, but *bigger*, in some way. `D` will `D`elete from your current position to the end of the line. I will leave it as an exercise to the reader to figure out what `Y` and `C` will do.
@@ -91,7 +91,14 @@ Pressing a capital action key will often do that action, but *bigger*, in some w
 Motions work similarly. `w` goes forward by one `w`ord (i.e., consecutive alphanumeric characters), and `W` will go forward one big `W`ord which includes all non-whitespace characters.
 
 
-### Extensible
+## Extensibility
 
 Vim is truly a tinkerer's editor. There are tons of plugins for vim, and plenty of built-in options to configure. The positive side of this is that you can tweak your editor to be exactly what you want. The flipside is that it really does require some degree of configuration out of the box. Vim plugins add all sorts of functionality, including adding extra actions, commands, or text objects for you to use and combine with the built-ins in ever-increasingly useful ways.
 
+There are lots of plugins on github. Some of my favorites are  [https://github.com/tommcdo/vim-exchange](vim-exchange), [https://github.com/tpope/vim-surround](vim surround), and anything else [https://github.com/tpope?tab=repositories](Tim Pope) has ever done.
+
+## Wrap Up
+
+I hope this has inspired you to take a closer look at vim. But don't forget, the lessons here can be applied to other editors/programs, as well! VS Code has a robust vim extension, RStudio has vim keybindings that you can enable in your global settings, Emacs has the unparalleled `evil-mode` for vim emulation, and many more.
+
+There will be deeper dives into each of the vim modes on this blog in the future, if you are interested in digging in further.
