@@ -45,7 +45,7 @@ In vim, keys are bound to different actions depending on what mode you're in. *N
 ## Mnemonics
 You may be thinking "that sounds like a lot of work to memorize all those keybindings". Well, yes and no. There are a lot of things you can do in vim. A lot a lot. But one of the key things about vim is that they took great pains to make the keybindings follow a logical pattern. If you say the thing you want to do in your head, that will go a long way to helping you memorize the keybindings until they become muscle memory.
 
- There keys that you might use to *do* something:
+ There are keys that you might use to *do* something:
 
 - `d` is to `d`elete some specified text
 - `c` is to `c`hange some speficied text (it will delete the text and bring you into insert mode to type the new text)
