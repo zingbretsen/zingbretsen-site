@@ -4,7 +4,7 @@ date: '2021-02-21'
 title: 'Vim Gives You Superpowers'
 ---
 
-Vim is the closest thing to telekinesis that I've experienced. Teletypekinesis, if you will. Once you learn how to control it, you will be able to move chunks of text around on a whim, teleport around the page, and Thanos-snap whole chunks of your document out of existence. And what you may not realize is: you don't even have to use vim to benefit from learning it.
+Vim is the closest thing to telekinesis that I've experienced. Teletypekinesis, if you will. Once you learn how to control it, you will be able to move chunks of text around on a whim, teleport around the page, and Thanos-snap whole chunks of your document out of existence. And what you may not realize is: <strong>you don't even have to use vim to benefit from learning it</strong>.
 
 Pretty much every editor and IDE has some kind of vim extension/plugin that lets you use vim keybindings alongside the tools you're already comfortable with. Vim-like keybindings are even present in some of your favorite webapps, and you may not even have known!
 
@@ -45,7 +45,7 @@ In vim, keys are bound to different actions depending on what mode you're in. *N
 ## Mnemonics
 You may be thinking "that sounds like a lot of work to memorize all those keybindings". Well, yes and no. There are a lot of things you can do in vim. A lot a lot. But one of the key things about vim is that they took great pains to make the keybindings follow a logical pattern. If you say the thing you want to do in your head, that will go a long way to helping you memorize the keybindings until they become muscle memory.
 
- There are keys that you might use to *do* something:
+There are keys that you might use to *do* something:
 
 - `d` is to `d`elete some specified text
 - `c` is to `c`hange some speficied text (it will delete the text and bring you into insert mode to type the new text)
@@ -53,7 +53,7 @@ You may be thinking "that sounds like a lot of work to memorize all those keybin
 - `p` is to `p`ut (paste) text
 - `u` is to `u`ndo
 
-There are some keys that you might use to move around the page:
+There are keys that you might use to move around the page:
 
 - `w` is to go forward by one `w`ord
 - `e` is to go forward to the `e`nd of the current word
@@ -76,7 +76,7 @@ The real power of vim's keybindings is that they *combine* with each other in pr
 
 If you press `d` to `d`elete something, you have to tell vim *what* you want to delete.
 
-As previously mentioned, `w` will move you between words (much faster than moving 1 character at a time, although there are other keys that will move you by whole sentences, paragraphs, or more). If you press `dw`, vim will `d`elete from your current position to the next `w`ord. `db` will delete from your current position backwards to the previous word. `d}` will `d`elete to the next paragraph/whitespace break.
+As previously mentioned, `w` will move you between words (much faster than moving 1 character at a time, although there are other keys that will move you by whole sentences, paragraphs, or more; we're taking things slowly to start). If you press `dw`, vim will `d`elete from your current position to the next `w`ord. `db` will delete from your current position backwards to the previous word. `d}` will `d`elete to the next paragraph/whitespace break.
 
 *YOU DO NOT HAVE TO MEMORIZE THESE SPECIFIC COMMANDS!* In fact, they are not standalone commands. They are combinations of actions and motions. You can mix and match actions and motions in powerful ways.
 
@@ -85,6 +85,7 @@ If you remember what `d` means, and what `w`, `b`, and `}`, you can figure out `
 Once you get comfortable with these, there are a ton of motions and text objects that you can operate on. For example you may want to `ci)`, or "change everything inside the parentheses". Or you may want to `dap`, or "delete around the paragraph" to delete the whole block of text (including the surrounding whitespace). You could then `Gp` to "`G`o to the bottom of the page and `p`aste your text".
 
 ### Other Common Patterns
+
 There are other useful conventions that many commands follow. Often times, pressing an action key twice will do that action on a whole line. `dd` will delete a whole line, regardless of where your cursor is. `yy` will yank a whole line. `cc` will change a whole line, etc.
 
 Pressing a capital action key will often do that action, but *bigger*, in some way. `D` will `D`elete from your current position to the end of the line. I will leave it as an exercise to the reader to figure out what `Y` and `C` will do.
