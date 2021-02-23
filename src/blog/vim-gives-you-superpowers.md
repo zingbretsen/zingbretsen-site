@@ -56,6 +56,7 @@ You may be thinking "that sounds like a lot of work to memorize all those keybin
 There are some keys that you might use to move around the page:
 
 - `w` is to go forward by one `w`ord
+- `e` is to go forward to the `e`nd of the current word
 - `b` is to go `b`ackward by one word
 - `)` is to jump to the next sentence (okay, they can't all be mnemonic winners)
 - `(` is to jump to the previous sentence
