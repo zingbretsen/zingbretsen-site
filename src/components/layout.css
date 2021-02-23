@@ -28,6 +28,11 @@ body {
   background-color: var(--light-gray);
 }
 
+code {
+  font-size: 1.1rem;
+  color: orange;
+}
+
 nav {
   /* width: 100vw; */
   height: 3rem;
