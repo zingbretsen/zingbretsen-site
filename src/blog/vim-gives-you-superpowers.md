@@ -96,7 +96,7 @@ Motions work similarly. `w` goes forward by one `w`ord (i.e., consecutive alphan
 
 Vim is truly a tinkerer's editor. There are tons of plugins for vim, and plenty of built-in options to configure. The positive side of this is that you can tweak your editor to be exactly what you want. The flipside is that it really does require some degree of configuration out of the box. Vim plugins add all sorts of functionality, including adding extra actions, commands, or text objects for you to use and combine with the built-ins in ever-increasingly useful ways.
 
-There are lots of plugins on github. Some of my favorites are  [https://github.com/tommcdo/vim-exchange](vim-exchange), [https://github.com/tpope/vim-surround](vim surround), and anything else [https://github.com/tpope?tab=repositories](Tim Pope) has ever done.
+There are lots of plugins on github. Some of my favorites are  [vim-exchange](https://github.com/tommcdo/vim-exchange), [vim surround](https://github.com/tpope/vim-surround), and anything else [Tim Pope](https://github.com/tpope?tab=repositories) has ever done.
 
 ## Wrap Up
 
