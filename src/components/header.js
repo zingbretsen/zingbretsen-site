@@ -5,16 +5,24 @@ class Header extends React.Component {
   render() {
     return (
       <nav>
-        <h3 className="brand">Zach Overflow</h3>
-        <Link to="/" activeClassName="active">
-          <p>Home</p>
-        </Link>
-        <Link to="/blog" activeClassName="active" partiallyActive={true}>
-          <p>Blog</p>
-        </Link>
-        <Link to="/whoami" activeClassName="active">
-          <p>whoami</p>
-        </Link>
+        <p className="brand">Zach Overflow</p>
+        <ul>
+          <li>
+            <Link to="/" activeClassName="active">
+              <p>Home</p>
+            </Link>
+          </li>
+          <li>
+            <Link to="/blog" activeClassName="active" partiallyActive={true}>
+              <p>Blog</p>
+            </Link>
+          </li>
+          <li>
+            <Link to="/whoami" activeClassName="active">
+              <p>whoami</p>
+            </Link>
+          </li>
+        </ul>
       </nav>
     );
   }
