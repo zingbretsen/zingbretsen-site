@@ -7,9 +7,9 @@ const BlogPage = ({ data }) => {
   return (
     <Layout title="Blog">
       <ul className="blogposts">
-        {data.allMarkdownRemark.edges.map((d) => {
+        {data.allMdx.edges.map((d) => {
           const post = d.node.frontmatter;
-          const html = d.node.htmlAst;
+          const excerpt = d.node.excerpt;
           return (
             <li
               className="blogpost"
@@ -20,7 +20,7 @@ const BlogPage = ({ data }) => {
                 <div className="spacer" />
                 <div>
                   <h5>{post.title} </h5>
-                  <p> {html.children[0].children[0].value} </p>
+                  <p> {excerpt} </p>
                 </div>
                 {/* </Link> */}
               </div>
@@ -35,7 +35,7 @@ const BlogPage = ({ data }) => {
 export default BlogPage;
 export const query = graphql`
   query blogPosts {
-    allMarkdownRemark {
+    allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           frontmatter {
@@ -43,10 +43,8 @@ export const query = graphql`
             title
             date
           }
-          headings {
-            id
-          }
-          htmlAst
+          id
+          excerpt
           timeToRead
         }
       }
