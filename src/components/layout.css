@@ -34,7 +34,6 @@ code {
 }
 
 nav {
-  /* width: 100vw; */
   height: 3rem;
   display: flex;
   flex-direction: row;
@@ -44,7 +43,6 @@ nav {
 nav a {
   text-align: center;
   color: var(--viridis-2);
-  /* width: 7rem; */
   text-decoration: none;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -52,7 +50,8 @@ nav a {
   padding-right: 0.5rem;
 }
 
-nav a:hover {
+nav a:hover
+{
   background-color: var(--lighter-gray);
   color: var(--viridis-1);
 }
@@ -87,38 +86,6 @@ li.blogpost a {
 
 .blogpost h5 {
   margin-top: 0px;
-}
-
-nav h3 {
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-right: 1rem;
-  padding-left: 1rem;
-}
-
-div[data-test="greetings-nav"] {
-  position: absolute;
-  height: 3rem;
-  display: flex;
-  position: absolute;
-  width: 100vw;
-  flex-direction: row-reverse;
-  justify-content: right;
-  right: 0px;
-  width: 10rem;
-}
-
-div[data-test="greetings-nav"] span div {
-  display: none;
-}
-
-div[data-test="greetings-nav-right"] {
-  justify-content: right;
-}
-
-button[data-test="sign-out-button"] {
-  justify-content: right;
-  height: 3rem;
 }
 
 .alert {
