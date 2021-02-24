@@ -5,8 +5,11 @@ module.exports = {
     author: `@zingbretsen`,
     twitter: `@zingbretsen`,
     linkedin: `https://www.linkedin.com/in/zingbretsen/`,
+    siteUrl: "https://zingbretsen.com",
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-robots-txt`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-mdx`,
