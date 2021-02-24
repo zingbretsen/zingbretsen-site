@@ -78,11 +78,6 @@ li.blogpost:hover {
 }
 
 li.blogpost > div {
-  display: flex;
-  flex-direction: row;
-}
-
-li.blogpost > div > div {
   margin: 1rem;
 }
 

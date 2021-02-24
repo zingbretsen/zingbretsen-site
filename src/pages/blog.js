@@ -17,12 +17,8 @@ const BlogPage = ({ data }) => {
               onClick={() => navigate(post.path)}
             >
               <div>
-                <div className="spacer" />
-                <div>
-                  <h5>{post.title} </h5>
-                  <p> {excerpt} </p>
-                </div>
-                {/* </Link> */}
+                <Link to={post.path}>{post.title}</Link>
+                <p>{excerpt}</p>
               </div>
             </li>
           );
