@@ -48,7 +48,7 @@ You may be thinking "that sounds like a lot of work to memorize all those keybin
 There are keys that you might use to *do* something:
 
 - `d` is to `d`elete some specified text
-- `c` is to `c`hange some speficied text (it will delete the text and bring you into insert mode to type the new text)
+- `c` is to `c`hange some specified text (it will delete the text and bring you into insert mode to type the new text)
 - `y` is to `y`ank (copy) text
 - `p` is to `p`ut (paste) text
 - `u` is to `u`ndo
