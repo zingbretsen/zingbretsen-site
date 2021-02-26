@@ -7,9 +7,9 @@ import Layout from "../components/layout";
 
 export default function Template({ data }) {
   const { mdx } = data;
-  const { frontmatter, body } = mdx;
+  const { frontmatter, body, excerpt } = mdx;
   return (
-    <Layout title="Zach Overflow Blog" description={frontmatter.title}>
+      <Layout title={frontmatter.title} description={excerpt}>
       <article>
         <h1 className="blogtitle">{frontmatter.title}</h1>
         <p className="blogdate">{frontmatter.date}</p>
@@ -24,6 +24,7 @@ export const pageQuery = graphql`
   query($path: String!) {
     mdx(frontmatter: { path: { eq: $path } }) {
       body
+      excerpt
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path
