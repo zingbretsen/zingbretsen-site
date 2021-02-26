@@ -119,3 +119,14 @@ li.blogpost a {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+
+img.whoami-image {
+  margin: 1em;
+  border-radius: 5em;
+}
+
+@media (min-width: 600px) {
+  img.whoami-image  {
+    float: right;
+  }
+}
