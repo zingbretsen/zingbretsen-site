@@ -25,11 +25,6 @@ const WhoamiPage = () => {
         alt="I'm this guy. Picture of me."
         src={file.childImageSharp.fixed.src}
         className="whoami-image"
-        style={{
-          float: "right",
-          margin: "1em",
-          borderRadius: "5em",
-        }}
       />
       <p>
         Professional nerd, foodie, and photographer. I am a data scientist with
