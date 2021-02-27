@@ -1,7 +1,7 @@
-import React from "react";
-import { Link, graphql, Image, navigate } from "gatsby";
+import React from 'react';
+import { Link, graphql, Image, navigate } from 'gatsby';
 
-import Layout from "../components/layout";
+import Layout from '../components/layout';
 
 const BlogPage = ({ data }) => {
   return (
@@ -11,11 +11,7 @@ const BlogPage = ({ data }) => {
           const post = d.node.frontmatter;
           const excerpt = d.node.excerpt;
           return (
-            <li
-              className="blogpost"
-              key={post.path}
-              onClick={() => navigate(post.path)}
-            >
+            <li className="blogpost" key={post.path} onClick={() => navigate(post.path)}>
               <div>
                 <Link to={post.path}>{post.title}</Link>
                 <p>{excerpt}</p>

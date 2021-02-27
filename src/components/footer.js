@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Footer = () => (
   <div className="fixed-bottom page-footer font-small blue pt-4">

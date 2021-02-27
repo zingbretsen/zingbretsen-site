@@ -36,8 +36,15 @@
     "typography-theme-parnassus": "^0.16.19"
   },
   "devDependencies": {
-    "eslint-config-prettier": "^8.0.0",
-    "prettier": "2.2.1"
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.2.1",
+    "undefined": "^0.1.0"
   },
   "keywords": [
     "gatsby"
@@ -45,16 +52,17 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "develop": "gatsby develop",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "lint": "eslint --fix .",
+    "serve": "gatsby serve",
+    "start": "npm run develop",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/zingbretsen/zingbretsen-site"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
