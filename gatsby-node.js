@@ -23,13 +23,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   result.data.allMdx.edges.forEach(({ node }) => {
-    if (typeof node.frontmatter.path == "undefined") {
-      node.frontmatter.path = "/blog/missing-path";
+    if (typeof node.frontmatter.path == 'undefined') {
+      node.frontmatter.path = '/blog/missing-path';
     }
     createPage({
       path: node.frontmatter.path,
       component: blogPostTemplate,
-      context: {}, // additional data can be passed via context
+      context: {} // additional data can be passed via context
     });
   });
 };

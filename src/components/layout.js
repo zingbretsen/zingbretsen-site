@@ -1,17 +1,16 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Header from "./header.js";
-import SEO from "./seo.js";
+import Header from './header.js';
+import SEO from './seo.js';
 
-import "./layout.css";
+import './layout.css';
 
-import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
 deckDeckGoHighlightElement();
 
 const Layout = ({ children, banner, title, description }) => {
-  const banner_class =
-    typeof banner != "undefined" ? "alert alert-warning" : "hidden";
+  const banner_class = typeof banner != 'undefined' ? 'alert alert-warning' : 'hidden';
   return (
     <div width="100%">
       <SEO title={title} description={description} />
@@ -23,7 +22,7 @@ const Layout = ({ children, banner, title, description }) => {
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 export default Layout;

@@ -30,7 +30,7 @@ body {
 
 code {
   font-size: 1.1rem;
-  color: #AA4443;
+  color: #aa4443;
 }
 
 nav {
@@ -45,7 +45,8 @@ nav ul {
   flex-direction: row;
 }
 
-nav ul li, nav p.brand {
+nav ul li,
+nav p.brand {
   list-style: none;
   margin: 0.5em;
   text-align: center;
@@ -57,8 +58,7 @@ nav ul li, nav p.brand {
   padding-right: 0.5rem;
 }
 
-nav a:hover
-{
+nav a:hover {
   background-color: var(--lighter-gray);
   color: var(--viridis-1);
 }
@@ -108,7 +108,7 @@ li.blogpost a {
 }
 
 .active p {
-  background-color: "black";
+  background-color: 'black';
   border-bottom: 2px solid var(--viridis-2);
 }
 
@@ -126,7 +126,7 @@ img.whoami-image {
 }
 
 @media (min-width: 600px) {
-  img.whoami-image  {
+  img.whoami-image {
     float: right;
   }
 }
