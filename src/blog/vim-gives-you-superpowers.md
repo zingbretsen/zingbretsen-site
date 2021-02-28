@@ -89,7 +89,7 @@ Once you get comfortable with these, there are a ton of motions and text objects
 
 There are other useful conventions that many commands follow. Often times, pressing an action key twice will do that action on a whole line. `dd` will delete a whole line, regardless of where your cursor is. `yy` will yank a whole line. `cc` will change a whole line, etc.
 
-Pressing a capital action key will often do that action, but _bigger_, in some way. `D` will `D`elete from your current position to the end of the line. I will leave it as an exercise to the reader to figure out what `Y` and `C` will do.
+Pressing a capital action key will often do that action, but _bigger_, in some way. `D` will `D`elete from your current position to the end of the line. I will leave it as an exercise to the reader to figure out what `C` will do.
 
 Motions work similarly. `w` goes forward by one `w`ord (i.e., consecutive alphanumeric characters), and `W` will go forward one big `W`ord which includes all non-whitespace characters.
 
