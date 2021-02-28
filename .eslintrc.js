@@ -18,6 +18,7 @@ module.exports = {
   },
   ignorePatterns: ['/node_modules/**', '/build/**', '/public/**'],
   rules: {
+    'react/prop-types': 'off',
     'no-unused-vars': ['warn', { args: 'none', argsIgnorePattern: 'req|res|next|val' }],
     'prettier/prettier': ['error']
   },
