@@ -1,29 +1,33 @@
 import React from 'react';
-import { Img, useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 
 const WhoamiPage = () => {
-  const { file } = useStaticQuery(
+  const { allImageSharp } = useStaticQuery(
     graphql`
-      {
-        file(relativePath: { eq: "zach_crop.jpg" }) {
-          childImageSharp {
-            id
-            fixed(width: 300) {
-              src
+      query MyQuery {
+        allImageSharp(filter: { fluid: { originalName: { in: ["zach_crop.jpg"] } } }) {
+          edges {
+            node {
+              fluid {
+                src
+              }
             }
           }
         }
       }
     `
   );
+
+  const imgs = allImageSharp.edges;
+
   return (
     <Layout title="About Me">
       <h1>&gt; whoami</h1>
       <img
         alt="I'm this guy. Picture of me."
-        src={file.childImageSharp.fixed.src}
+        src={imgs[0].node.fluid.src}
         className="whoami-image"
       />
       <p>
