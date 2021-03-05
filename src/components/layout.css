@@ -108,23 +108,23 @@ li.blogpost a {
 }
 
 .container {
-  /* margin: 2em; */
   color: #000000cc;
   max-width: 60rem;
   padding-left: 2rem;
   padding-right: 2rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 img.whoami-image {
-  /* margin-left: 1em; */
-  /* margin-right: 1em; */
+  padding: 1em;
   border-radius: 5em;
 }
 
 @media (min-width: 600px) {
   img.whoami-image {
     float: right;
-    max-width: 400px;
+    max-width: 350px;
   }
 }
 

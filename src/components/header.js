@@ -5,7 +5,7 @@ class Header extends React.Component {
   render() {
     return (
       <nav>
-        <p className="brand">Zach Overflow</p>
+        <p className="brand">Zach Ingbretsen</p>
         <ul>
           <li>
             <Link to="/" activeClassName="active">
@@ -15,11 +15,6 @@ class Header extends React.Component {
           <li>
             <Link to="/blog" activeClassName="active" partiallyActive={true}>
               <p>Blog</p>
-            </Link>
-          </li>
-          <li>
-            <Link to="/whoami" activeClassName="active">
-              <p>whoami</p>
             </Link>
           </li>
         </ul>
