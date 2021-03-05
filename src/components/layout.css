@@ -63,11 +63,6 @@ nav a:hover {
   color: var(--viridis-1);
 }
 
-.container {
-  margin: 2em;
-  color: #000000cc;
-}
-
 li.blogpost {
   background-color: var(--light-gray);
   list-style-type: none;
@@ -113,20 +108,27 @@ li.blogpost a {
 }
 
 .container {
+  color: #000000cc;
   max-width: 60rem;
-  margin-left: auto;
-  margin-right: auto;
   padding-left: 2rem;
   padding-right: 2rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 img.whoami-image {
-  margin: 1em;
+  padding: 1em;
   border-radius: 5em;
 }
 
 @media (min-width: 600px) {
   img.whoami-image {
     float: right;
+    max-width: 350px;
   }
+}
+
+.headerimg {
+  width: 100%;
+  max-height: 100px;
 }
