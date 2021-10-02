@@ -33,9 +33,31 @@ However, to _only_ copy files that match a particular pattern is more complicate
 _*BUT*_! We need to tell `rsync` that we want to _include_ all directories first. The following command will copy all `*.txt*` files to the destination:
 
 ```bash
-rsync -avz --include='*/' --include='*.txt' --exclude='*' src/ dest_includes/
+rsync -avz --include='*/' --include='*.txt' --exclude='*' src/ dest/
 ```
 
-We need all of those pieces in that order:
+We need all of those pieces, with the includes first and the exclude second:
 
-1. Include all directories (otherwis)
+1. Include all directories
+2. Include all \*.txt files
+3. Exclude everything else
+
+## Things that seem like they should work, but don't
+
+The first thing you might try is to just include the `*.txt*` files, but this will just copy all files because `rsync` includes all files by default:
+
+```bash
+rsync -avz --include='*.txt' --exclude='*' src/ dest/
+```
+
+If you the exclude all other files but don't include all directories (as in the following example), you will only copy the `*.txt` files that are in the root of your `src` directory, but not in any subdirectories. This is because excluding `*` excludes all files and directories.
+
+```bash
+rsync -avz --include='*.txt' --exclude='*' src/ dest/
+```
+
+And if you have all the proper includes put the exclude first, you will not copy any files because the order matters. Here, you are excluding all files and directories right off the bat, and no later includes will change that:
+
+```bash
+rsync -avz --exclude='*' --inclue='*/' --include='*.txt' src/ dest/
+```
