@@ -4,7 +4,7 @@ date: '2021-09-27'
 title: 'How to Selectively Copy Files with Rsync'
 ---
 
-The utility [https://rsync.samba.org/](`rsync`) is fantastic for efficient, incremental backups of files. It can be used to copy files locally or to back files up to a remote machine over SSH.
+The utility [`rsync`](https://rsync.samba.org/) is fantastic for efficient, incremental backups of files. It can be used to copy files locally or to back files up to a remote machine over SSH.
 
 One aspect of `rsync` that I always struggle with, however, is the syntax for selectively syncing a subset of files. It does not use the normal wildcard expansion that other shell commands use, and it is particularly persnickety about how you order your includes and excludes.
 
