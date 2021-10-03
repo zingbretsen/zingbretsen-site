@@ -1,6 +1,6 @@
 ---
 path: '/blog/rsync-include-exclude'
-date: '2021-09-27'
+date: '2021-10-03'
 title: 'How to Selectively Copy Files with Rsync'
 ---
 
