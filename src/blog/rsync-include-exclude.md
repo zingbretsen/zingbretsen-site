@@ -28,9 +28,9 @@ rsync -avz --exclude='.git/' --exclude='*.yml' src/ dest/
 
 ## Including a subset of files
 
-However, to _only_ copy files that match a particular pattern is more complicated. By default, as seen above, `rsync` includes all files and folders by default. In order to only _include_ files of a certain type, we need to _exclude_ all the other files.
+However, to _only_ copy files that match a particular pattern is more complicated. As seen above, `rsync` includes all files and folders by default. In order to only _include_ files of a certain type, we need to _exclude_ all the other files _*but not all directories*_.
 
-_*BUT*_! We need to tell `rsync` that we want to _include_ all directories first. The following command will copy all `*.txt*` files to the destination:
+We need to tell `rsync` explicitly that we want to _include_ all directories because excluding `*` would exclude directories as well as files. The following command will copy all `*.txt*` files to the destination as desired:
 
 ```bash
 rsync -avz --include='*/' --include='*.txt' --exclude='*' src/ dest/
