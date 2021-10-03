@@ -16,7 +16,7 @@ By default, it will copy the entire contents of the `src` directory to the `dest
 rsync -avz src/ dest/
 ```
 
-This will include all files and subdirectories, including hidden ones like .git/, which you may not want to copy.
+This will include all files and subdirectories, including hidden ones like `.git/`, which you may not want to copy.
 
 ## Excluding a subset of files
 
@@ -39,7 +39,7 @@ rsync -avz --include='*/' --include='*.txt' --exclude='*' src/ dest/
 We need all of those pieces, with the includes first and the exclude second:
 
 1. Include all directories
-2. Include all \*.txt files
+2. Include all `*.txt` files
 3. Exclude everything else
 
 ## Things that seem like they should work, but don't
