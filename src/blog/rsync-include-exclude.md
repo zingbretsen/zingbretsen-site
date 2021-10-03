@@ -20,7 +20,7 @@ This will include all files and subdirectories, including hidden ones like .git/
 
 ## Excluding a subset of files
 
-To exclude files or directories, you use the `--exclude` flag. You can exclude specific files or directories or files/directories that match a particular pattern. This will exclude the .git directory and any file that ends with `yml`:
+To exclude files or directories, you use the `--exclude` flag. You can exclude specific files or directories or files/directories that match a particular pattern. This will exclude the `.git` directory and any file that ends with `yml`:
 
 ```bash
 rsync -avz --exclude='.git/' --exclude='*.yml' src/ dest/
@@ -30,7 +30,7 @@ rsync -avz --exclude='.git/' --exclude='*.yml' src/ dest/
 
 However, to _only_ copy files that match a particular pattern is more complicated. As seen above, `rsync` includes all files and folders by default. In order to only _include_ files of a certain type, we need to _exclude_ all the other files _*but not all directories*_.
 
-We need to tell `rsync` explicitly that we want to _include_ all directories because excluding `*` would exclude directories as well as files. The following command will copy all `*.txt*` files to the destination as desired:
+We need to tell `rsync` explicitly that we want to _include_ all directories because excluding `*` would exclude directories as well as files. The following command will copy all `*.txt` files to the destination as desired:
 
 ```bash
 rsync -avz --include='*/' --include='*.txt' --exclude='*' src/ dest/
@@ -44,7 +44,7 @@ We need all of those pieces, with the includes first and the exclude second:
 
 ## Things that seem like they should work, but don't
 
-The first thing you might try is to just include the `*.txt*` files, but this will just copy all files because `rsync` includes all files by default:
+The first thing you might try is to just include the `*.txt` files, but this will copy all files because `rsync` includes all files by default:
 
 ```bash
 rsync -avz --include='*.txt' --exclude='*' src/ dest/
