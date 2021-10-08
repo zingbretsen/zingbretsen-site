@@ -13,6 +13,7 @@ export default function Template({ data }) {
       <article>
         <h1 className="blogtitle">{frontmatter.title}</h1>
         <p className="blogdate">{frontmatter.date}</p>
+        <p className="blogdate">{frontmatter.tags}</p>
         <MDXRenderer className="blog-post-content">{body}</MDXRenderer>
       </article>
       <Link to="/blog">Go back to the blog</Link>
@@ -29,6 +30,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        tags
       }
     }
   }

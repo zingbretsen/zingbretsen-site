@@ -2,6 +2,7 @@
 path: '/blog/npm-on-ubuntu'
 date: '2020-08-09'
 title: 'Installing NodeJS and NPM on Ubuntu'
+tags: ['npm', 'ubuntu', 'linux']
 ---
 
 If you are developing websites in 2020 it is highly likely that NodeJS forms at least part of your toolchain. Whether you're developing on the backend or frontend, NodeJS plays an important part in the JavaScript ecosystem.

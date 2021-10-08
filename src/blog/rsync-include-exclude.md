@@ -2,6 +2,7 @@
 path: '/blog/rsync-include-exclude'
 date: '2021-10-03'
 title: 'How to Selectively Copy Files with Rsync'
+tags: ['linux', 'utils']
 ---
 
 The utility [`rsync`](https://rsync.samba.org/) is fantastic for efficient, incremental backups of files. It can be used to copy files locally or to back files up to a remote machine over SSH.
