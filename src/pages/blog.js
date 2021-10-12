@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql, Image, navigate } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import BlogPostCard from '../components/blogpostcard';
@@ -9,9 +9,7 @@ const BlogPage = ({ data }) => {
     <Layout title="Blog">
       <ul className="blogposts">
         {data.allMdx.edges.map((d) => {
-          const post = d.node.frontmatter;
-          const excerpt = d.node.excerpt;
-          return <BlogPostCard key={post.title} post={post} excerpt={excerpt} />;
+          return <BlogPostCard key={d.node.frontmatter.title} post={d.node} />;
         })}
       </ul>
     </Layout>

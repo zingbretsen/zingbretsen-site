@@ -17,8 +17,7 @@ const Tags = ({ pageContext, data }) => {
       <h1 className="blogtitle">{tagHeader}</h1>
       <ul>
         {edges.map(({ node }) => {
-          const { frontmatter, excerpt } = node;
-          return <BlogPostCard key={frontmatter.title} post={frontmatter} excerpt={excerpt} />;
+          return <BlogPostCard key={node.frontmatter.title} post={node} />;
         })}
       </ul>
       <Link to="/blog">Go back to the blog</Link>
