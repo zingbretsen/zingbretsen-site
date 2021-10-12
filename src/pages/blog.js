@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, graphql, Image, navigate } from 'gatsby';
 
 import Layout from '../components/layout';
+import BlogPostCard from '../components/blogpostcard';
 
 const BlogPage = ({ data }) => {
   return (
@@ -10,14 +11,7 @@ const BlogPage = ({ data }) => {
         {data.allMdx.edges.map((d) => {
           const post = d.node.frontmatter;
           const excerpt = d.node.excerpt;
-          return (
-            <li className="blogpost" key={post.path} onClick={() => navigate(post.path)}>
-              <div>
-                <Link to={post.path}>{post.title}</Link>
-                <p>{excerpt}</p>
-              </div>
-            </li>
-          );
+          return <BlogPostCard key={post.title} post={post} excerpt={excerpt} />;
         })}
       </ul>
     </Layout>

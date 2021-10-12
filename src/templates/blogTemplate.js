@@ -13,7 +13,14 @@ export default function Template({ data }) {
       <article>
         <h1 className="blogtitle">{frontmatter.title}</h1>
         <p className="blogdate">{frontmatter.date}</p>
-        <p className="blogdate">{frontmatter.tags}</p>
+        <div className="tags">
+          <span>Tags: </span>
+          {frontmatter.tags.map((tag) => (
+            <Link className="blog-tag" key={tag} to={'/tags/' + tag}>
+              {tag}
+            </Link>
+          ))}
+        </div>
         <MDXRenderer className="blog-post-content">{body}</MDXRenderer>
       </article>
       <Link to="/blog">Go back to the blog</Link>
