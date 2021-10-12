@@ -3,6 +3,7 @@ path: '/blog/on-finishing-projects'
 date: '2021-09-20'
 title: 'On Finishing Projects'
 edit: 'This used to be a tongue-in-cheek post about not knowing how to finish personal projects, but I think there are useful things to be said about what the goal of projects should be.'
+tags: ['quick-byte']
 ---
 
 We all struggle following through on personal projects sometimes. It can be hard to focus on the current task when the next fun idea presents itself.

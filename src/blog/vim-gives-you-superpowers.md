@@ -2,6 +2,7 @@
 path: '/blog/vim-gives-you-superpowers'
 date: '2021-02-21'
 title: 'Vim Gives You Superpowers'
+tags: ['vim', 'superpowers']
 ---
 
 Vim is the closest thing to telekinesis that I've experienced. Teletypekinesis, if you will. Once you learn how to control it, you will be able to move chunks of text around on a whim, teleport around the page, and Thanos-snap whole chunks of your document out of existence. And what you may not realize is: <strong>you don't even have to use vim to benefit from learning it</strong>.
