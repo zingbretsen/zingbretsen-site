@@ -2,14 +2,13 @@
 path: '/blog/on-finishing-projects'
 date: '2021-09-20'
 title: 'On Finishing Projects'
+edit: 'This used to be a tongue-in-cheek post about not knowing how to finish personal projects, but I think there are useful things to be said about what the goal of projects should be.'
 ---
 
 We all struggle following through on personal projects sometimes. It can be hard to focus on the current task when the next fun idea presents itself.
 
-Here's my step-by-step guide with all the tricks and tips I've found to get those projects over the finish line:
+Honestly, I think that's fine.
 
-1. 
+## Why work on personal projects
 
-And there you have it.
-
-Subscribe to my newsletter for Part 2 in the series: Buying Domains for Unfinished Projects
+There are different reasons to work on personal projects. For me, the two biggest motivators are the end result and learning new skills.
