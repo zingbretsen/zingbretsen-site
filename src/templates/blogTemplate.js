@@ -13,6 +13,7 @@ export default function Template({ data }) {
       <article>
         <h1 className="blogtitle">{frontmatter.title}</h1>
         <p className="blogdate">{frontmatter.date}</p>
+        {frontmatter.edit ? <p className="edit-message">{'Edit: ' + frontmatter.edit}</p> : <></>}
         <div className="tags">
           <span>Tags: </span>
           {frontmatter.tags.map((tag) => (
@@ -37,6 +38,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        edit
         tags
       }
     }
