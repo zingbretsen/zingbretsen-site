@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: zingbretsen.com
-Token: a1b17b8bae79bc57a1808804d53783f3b3665b5f3e98b92df59f4f02b7a015e3
