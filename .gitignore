@@ -88,3 +88,6 @@ amplifytools.xcconfig
 .Rhistory
 
 *.swp
+
+/.direnv/
+/.projectile
