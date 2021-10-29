@@ -34,7 +34,16 @@ The tidyverse uses pipes extensively, and is one of the reasons that tidy code i
 
 ### Forward-Pipe Operator
 
-`%>%` is the forward-pipe operator. If you import `dplyr`, it automatically imports this pipe (and only this pipe) from `magrittr`. It takes the result from the lefthand side (often abbreviated `lhs`) and inserts it into the righthand side (`rhs`) function as the *first argument*. The following code will take the `mtcars` dataset, `filter` it, `select` a subset of columns, and then display the first 6 items (with `head`). However, because of the nested function calls, it is not immediately obvious in what order the functions are run and what is the state of the dataset at each step:
+`%>%` is the forward-pipe operator. If you import `dplyr`, it automatically imports this pipe (and only this pipe) from `magrittr`. It takes the result from the lefthand side (often abbreviated `lhs`) and inserts it into the righthand side (`rhs`) function as the *first argument*.
+```{r, eval=FALSE}
+lhs %>% rhs
+
+## Is equivalent to
+rhs(lhs)
+```
+
+
+The following code will take the `mtcars` dataset, `filter` it, `select` a subset of columns, and then display the first 6 items (with `head`). However, because of the nested function calls, it is not immediately obvious in what order the functions are run and what is the state of the dataset at each step:
 ```{r, message=FALSE}
 library(dplyr)
 
@@ -42,6 +51,7 @@ head(select(filter(mtcars, cyl >= 4), mpg, cyl))
 ```
 
 Using pipes, we can untangle that mess and it becomes clear what the intended order is. As we stated before, we take the `mtcars` dataset, `filter` it, `select` a couple of columns, and then pipe it into `head`. Now the code actually reads like what we intended from the start:
+
 ```{r}
 mtcars %>% filter(cyl >= 4) %>% select(mpg, cyl) %>% head()
 ```

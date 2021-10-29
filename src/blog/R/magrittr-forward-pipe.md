@@ -43,11 +43,20 @@ exports one pipe from the magrittr package, the forward-pipe (`%>%`).
 automatically imports this pipe (and only this pipe) from `magrittr`. It
 takes the result from the lefthand side (often abbreviated `lhs`) and
 inserts it into the righthand side (`rhs`) function as the _first
-argument_. The following code will take the `mtcars` dataset, `filter`
-it, `select` a subset of columns, and then display the first 6 items
-(with `head`). However, because of the nested function calls, it is not
-immediately obvious in what order the functions are run and what is the
-state of the dataset at each step:
+argument_.
+
+```r
+lhs %>% rhs
+
+## Is equivalent to
+rhs(lhs)
+```
+
+The following code will take the `mtcars` dataset, `filter` it, `select`
+a subset of columns, and then display the first 6 items (with `head`).
+However, because of the nested function calls, it is not immediately
+obvious in what order the functions are run and what is the state of the
+dataset at each step:
 
 ```r
 library(dplyr)
