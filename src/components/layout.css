@@ -149,3 +149,11 @@ p.edit-message {
   font-size: 0.75em;
   color: #555;
 }
+
+@media (min-width: 400px) {
+  div.right {
+    float: right;
+    width: 200px;
+    margin-left: 20px;
+  }
+}

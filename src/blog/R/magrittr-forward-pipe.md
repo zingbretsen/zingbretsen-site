@@ -20,7 +20,7 @@ output:
 
 <div classname="right">
 
-<img style="float:right;width:400px;" src="imgs/magrittr.png" />
+<img src="imgs/magrittr.png" />
 
 </div>
 

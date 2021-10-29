@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Pipes
 <div className="right">
-<img style="float:right;width:400px;" src="imgs/magrittr.png" />
+<img src="imgs/magrittr.png" />
 </div>
 
 This post is about the forward-pipe from the magrittr package in R. If you have worked in a shell in a *nix system, you are likely already familiar with pipes, but for the uninitiated here's the scoop:
