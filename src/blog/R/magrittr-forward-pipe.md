@@ -1,0 +1,183 @@
+---
+title: 'Le Forward Pipe'
+author: 'Zach Ingbretsen'
+date: '2021-10-28'
+path: '/blog/magrittr-intro'
+tags:
+  - r
+  - rstats
+  - pipes
+  - magrittr
+output:
+  md_document:
+    variant: markdown_github
+    preserve_yaml: true
+    dev: 'jpeg'
+    df_print: 'tibble'
+---
+
+## Pipes
+
+<div classname="right">
+
+<img src="imgs/magrittr.png" />
+
+</div>
+
+This post is about the forward-pipe from the magrittr package in R. If
+you have worked in a shell in a \*nix system, you are likely already
+familiar with pipes, but for the uninitiated here’s the scoop:
+
+Pipes essentially allow you to take the output of one operation and
+“pipe” it into the next operation. This makes the code read more closely
+to how you think about the execution than does the other way of writing
+code: nesting functions inside each other.
+
+The tidyverse uses pipes extensively, and is one of the reasons that
+tidy code is so readable. When you source in dplyr, it automatically
+exports one pipe from the magrittr package, the forward-pipe (`%>%`).
+
+### Forward-Pipe Operator
+
+`%>%` is the forward-pipe operator. If you import `dplyr`, it
+automatically imports this pipe (and only this pipe) from `magrittr`. It
+takes the result from the lefthand side (often abbreviated `lhs`) and
+inserts it into the righthand side (`rhs`) function as the _first
+argument_.
+
+```r
+lhs %>% rhs
+
+## Is equivalent to
+rhs(lhs)
+```
+
+The following code will take the `mtcars` dataset, `filter` it, `select`
+a subset of columns, and then display the first 6 items (with `head`).
+However, because of the nested function calls, it is not immediately
+obvious in what order the functions are run and what is the state of the
+dataset at each step:
+
+```r
+library(dplyr)
+
+head(select(filter(mtcars, cyl >= 4), mpg, cyl))
+```
+
+    ## # A tibble: 6 x 2
+    ##     mpg   cyl
+    ##   <dbl> <dbl>
+    ## 1  21       6
+    ## 2  21       6
+    ## 3  22.8     4
+    ## 4  21.4     6
+    ## 5  18.7     8
+    ## 6  18.1     6
+
+Using pipes, we can untangle that mess and it becomes clear what the
+intended order is. As we stated before, we take the `mtcars` dataset,
+`filter` it, `select` a couple of columns, and then pipe it into `head`.
+Now the code actually reads like what we intended from the start:
+
+```r
+mtcars %>% filter(cyl >= 4) %>% select(mpg, cyl) %>% head()
+```
+
+    ## # A tibble: 6 x 2
+    ##     mpg   cyl
+    ##   <dbl> <dbl>
+    ## 1  21       6
+    ## 2  21       6
+    ## 3  22.8     4
+    ## 4  21.4     6
+    ## 5  18.7     8
+    ## 6  18.1     6
+
+An important limitation is that each function in our pipe must accept
+the data as the _first_ argument. Most of the `tidyverse` functions
+follow this convention, but not all R functions do. If you need to pass
+the data as a _different_ argument, you can use `.`.
+
+In this fairly contrived example, if we want to find which rows contain
+the string “Mazda”, we can use one of the functions from the `grep`
+family. Unfortunately for our piping, `grep` functions take the
+_pattern_ you are searching for as the first argument and the strings
+you are searching as the second. This would not work if we naively pipe
+the output from `row.names` into `grep` because we would be passing our
+character vector into the `pattern` argument and “Mazda” in as `x` (the
+vector we want to search within).
+
+For this situation, we can change which argument gets the data by using
+`.`–This lets us specify that `grep` should take the vector passed in
+from the previous step as the second argument, and “Mazda” as the first:
+
+```r
+indices <- mtcars %>% row.names() %>% grep("Mazda", .)
+mtcars[indices,]
+```
+
+    ## # A tibble: 2 x 11
+    ##     mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
+    ##   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+    ## 1    21     6   160   110   3.9  2.62  16.5     0     1     4     4
+    ## 2    21     6   160   110   3.9  2.88  17.0     0     1     4     4
+
+We can even take this a step further. Rather than saving the indices and
+using them in a separate step, we can once again using our friend the
+`.` thusly:
+
+```r
+mtcars %>% row.names() %>% grep("Mazda", .) %>% mtcars[.,]
+```
+
+    ## # A tibble: 2 x 11
+    ##     mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
+    ##   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+    ## 1    21     6   160   110   3.9  2.62  16.5     0     1     4     4
+    ## 2    21     6   160   110   3.9  2.88  17.0     0     1     4     4
+
+`mtcars` is not a function, and so we cannot just pipe data into it. We
+_can_, however, index into it using the `.`. In your own endeavors, use
+your best judgment about whether using this kind of strategy helps or
+hurts the readability of your code.
+
+The `.` cannot, unfortunately, save us from some other common problems.
+There are situations where you don’t want to pass the whole input into
+the `rhs` function. This example of taking the mean of the `mpg` column
+will fail because the pipe will still pass the data into the first
+argument _in addition to_ passing the `mpg` column in as the `trim`
+argument. If you pass the full dataset (as `.`) as an argument by
+itself, it will not be piped in as the first argument. If you modify it
+(e.g., by subsetting, slicing, or otherwise operating on the data),
+`magrittr` will still pass your data in as the first argument.
+
+This following command will fail because the `.$mpg` is effectively
+being passed as the second argument, and `.` as the first. This doesn’t
+make sense in the `mean` function.
+
+```r
+## Equivalent to mtcars %>% mean(., .$mpg)
+## or mean(mtcars, mtcars$mpg)
+mtcars %>% mean(.$mpg)
+```
+
+    ## Warning in mean.default(., .$mpg): argument is not numeric or logical: returning
+    ## NA
+
+    ## [1] NA
+
+One solution would be to use `dplyr::pull` to extract one column from a
+data frame, and then pass that vector to the next function in the
+pipeline.
+
+```r
+mtcars %>% pull(mpg) %>%  mean()
+```
+
+    ## [1] 20.09062
+
+However, `magrittr` has other pipes for such situations, which we will
+learn about in the next post…
+
+(Spoiler: It’s the `%$%` pipe! But there are others, and they’re useful,
+too!)
