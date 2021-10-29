@@ -1,5 +1,5 @@
 ---
-title: "Ceci n'est pas un blog post"
+title: 'Le Forward Pipe'
 author: 'Zach Ingbretsen'
 date: '2021-10-28'
 path: '/blog/magrittr-intro'
