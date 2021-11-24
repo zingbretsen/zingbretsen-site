@@ -19,7 +19,7 @@ rsync -avz src/ dest/
 
 This will include all files and subdirectories, including hidden ones like `.git/`, which you may not want to copy.
 
-## Excluding a subset of files
+## Excluding
 
 To exclude files or directories, you use the `--exclude` flag. You can exclude specific files or directories or files/directories that match a particular pattern. This will exclude the `.git` directory and any file that ends with `yml`:
 
