@@ -1,6 +1,6 @@
 ---
 path: '/blog/list-files-installed-ubuntu'
-date: '2021-11-24
+date: '2021-11-24'
 title: 'List Files Installed by a Package with dpkg'
 tags: ['quick-byte', 'ubuntu', 'linux', 'dpkg']
 ---
