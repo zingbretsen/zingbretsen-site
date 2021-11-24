@@ -22,9 +22,9 @@ const Tags = ({ pageContext, data }) => {
       </ul>
       <div className="blog-link">
         <Link to="/blog">Go back to the blog</Link>
+        {' | '}
+        <Link to="/tags">All tags</Link>
       </div>
-      {' | '}
-      <Link to="/tags">All tags</Link>
     </Layout>
   );
 };
