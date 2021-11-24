@@ -20,9 +20,11 @@ const Tags = ({ pageContext, data }) => {
           return <BlogPostCard key={node.frontmatter.title} post={node} />;
         })}
       </ul>
-      <Link to="/blog">Go back to the blog</Link>
-      {' | '}
-      <Link to="/tags">All tags</Link>
+      <div className="blog-link">
+        <Link to="/blog">Go back to the blog</Link>
+        {' | '}
+        <Link to="/tags">All tags</Link>
+      </div>
     </Layout>
   );
 };

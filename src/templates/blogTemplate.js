@@ -24,7 +24,9 @@ export default function Template({ data }) {
         </div>
         <MDXRenderer className="blog-post-content">{body}</MDXRenderer>
       </article>
-      <Link to="/blog">Go back to the blog</Link>
+      <div className="blog-link">
+        <Link to="/blog">Go back to the blog</Link>
+      </div>
     </Layout>
   );
 }
