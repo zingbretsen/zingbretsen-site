@@ -159,5 +159,38 @@ p.edit-message {
 }
 
 .blog-link {
-  margin-bottom: 10em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+/* Mailchimp styling */
+#mc_embed_signup {
+  /* background: #fff; */
+  clear: left;
+  font: 14px Helvetica, Arial, sans-serif;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  margin-bottom: 1em;
+  border-radius: 25px;
+}
+
+#mc-embedded-subscribe-form input[type='checkbox'] {
+  display: inline;
+  width: auto;
+  margin-right: 10px;
+}
+
+#mergeRow-gdpr {
+  margin-top: 20px;
+}
+
+#mergeRow-gdpr fieldset label {
+  font-weight: normal;
+}
+
+#mc-embedded-subscribe-form .mc_fieldset {
+  border: none;
+  min-height: 0px;
+  padding-bottom: 0px;
 }
