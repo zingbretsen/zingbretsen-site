@@ -42,16 +42,6 @@ export default function Template({ data }) {
           target="_blank"
           noValidate>
           <div id="mc_embed_signup_scroll">
-            <label htmlFor="mce-EMAIL">Subscribe to the email list</label>
-            <input
-              type="email"
-              value=""
-              name="EMAIL"
-              className="email"
-              id="mce-EMAIL"
-              placeholder="email address"
-              required
-            />
             <div
               id="mergeRow-gdpr"
               className="mergeRow gdpr-mergeRow content__gdprBlock mc-field-group"></div>
