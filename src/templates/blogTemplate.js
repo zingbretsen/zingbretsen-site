@@ -25,6 +25,7 @@ export default function Template({ data }) {
         <MDXRenderer className="blog-post-content">{body}</MDXRenderer>
       </article>
 
+      <hr />
       {/* Begin mailchimp signup */}
       <link
         href="//cdn-images.mailchimp.com/embedcode/slim-10_7_dtp.css"
