@@ -1,13 +1,11 @@
----
-path: '/blog/list-files-installed-ubuntu'
-date: '2021-11-24'
-title: 'List Files Installed by a Package with dpkg'
+import Layout from '@components/layout'
+
+export const meta = {
+path: '/blog/list-files-installed-ubuntu',
+date: '2021-11-24',
+title: 'List Files Installed by a Package with dpkg',
 tags: ['quick-byte', 'ubuntu', 'linux', 'dpkg']
----
-
-The command `dpkg` has many uses beyond installing and removing `.deb` files. This includes finding out what files were added to your system when you installed a package, as well as showing what package installed a given file.
-
----
+}
 
 The command `dpkg` has many uses beyond installing and removing `.deb` files. This includes finding out what files were added to your system when you installed a package, as well as showing what package installed a given file.
 
@@ -75,3 +73,6 @@ dpkg -S vendor-completions | sort | head -n 4
     ## docker-compose: /usr/share/zsh/vendor-completions/_docker-compose
     ## flatpak: /usr/share/zsh/vendor-completions/_flatpak
 ```
+
+
+export default ({children}) => <Layout meta={meta}>{children}</Layout>
