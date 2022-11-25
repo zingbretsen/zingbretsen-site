@@ -60,9 +60,9 @@ const BlogPost = ({ meta }) => (
     </code>
 
     <p>
-      This command (`dpkg -L package-name`) will "[l]ist files installed to your system from
-      package-name." As you can see, this shows not only the binaries that were installed (`fzf` and
-      `fzf-tmux`), but a number of other files, as well.
+      This command (`dpkg -L package-name`) will &quot;[l]ist files installed to your system from
+      package-name.&quot; As you can see, this shows not only the binaries that were installed
+      (`fzf` and `fzf-tmux`), but a number of other files, as well.
     </p>
 
     <p>
