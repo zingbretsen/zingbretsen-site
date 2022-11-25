@@ -9,25 +9,29 @@ import Footer from './footer';
 
 const Layout = ({ children, banner, meta }) => {
   const banner_class = typeof banner != 'undefined' ? 'alert alert-warning' : 'hidden';
-  const posted_date =
-    typeof meta?.date != 'undefined' ? <p className="blogdate">Posted: {meta.date}</p> : <></>;
-  const tags =
-    typeof meta?.tags != 'undefined' ? (
-      <p>
-        Tags:{' '}
-        {typeof meta?.tags != 'undefined' ? (
-          meta.tags.map((tag) => (
-            <Link key={`/tags/${tag}`} href={`/tags/${tag}`} className="blog-tag">
-              <a className="blog-tag">{tag}</a>
-            </Link>
-          ))
-        ) : (
-          <></>
-        )}
-      </p>
-    ) : (
-      <></>
-    );
+  let posted_date = <></>;
+  let tags = <></>;
+  if (typeof meta != 'undefined') {
+    posted_date =
+      typeof meta.date != 'undefined' ? <p className="blogdate">Posted: {meta.date}</p> : <></>;
+    tags =
+      typeof meta.tags != 'undefined' ? (
+        <p>
+          Tags:{' '}
+          {typeof meta.tags != 'undefined' ? (
+            meta.tags.map((tag) => (
+              <Link key={`/tags/${tag}`} href={`/tags/${tag}`} className="blog-tag">
+                <a className="blog-tag">{tag}</a>
+              </Link>
+            ))
+          ) : (
+            <></>
+          )}
+        </p>
+      ) : (
+        <></>
+      );
+  }
 
   return (
     <div id="app">

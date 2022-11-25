@@ -10,7 +10,7 @@ const BlogPage = ({ tags_count }) => {
   return (
     <Layout meta={{ title: 'Blog Tags' }} banner={undefined}>
       <ul className="taglist">
-        {tags_count.map((d: [any, number]) => {
+        {tags_count.map((d) => {
           return (
             <Link key={d[0]} href={`tags/${d[0]}`}>
               <p>
@@ -30,7 +30,11 @@ export async function getStaticProps() {
   let tags = [];
   let posts = getBlogPosts().filter((p) => p.active);
 
-  posts.map((p) => p.tags?.map((t: String) => tags.push(t)));
+  posts.map((p) => {
+    if (typeof p.tags != 'undefined') {
+      p.tags.map((t) => tags.push(t));
+    }
+  });
 
   let tags_hash = new Map();
   for (let i = 0; i < tags.length; i++) {
