@@ -1,70 +1,59 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
 
 function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-            twitter
-            linkedin
-          }
-        }
-      }
-    `
-  );
+  const site = {
+    title: 'zingbretsen',
+    description: '',
+    author: 'Zach Ingbretsen',
+    twitter: 'https://zingbretsen.com',
+    linkedin: 'https://www.linkedin.com/in/zingbretsen/'
+  };
 
-  const metaDescription = description || site.siteMetadata.description;
+  const metaDescription = description || site.description;
 
-  return (
-    <Helmet
-      htmlAttributes={{
-        lang
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription
-        },
-        {
-          property: `og:title`,
-          content: title
-        },
-        {
-          property: `og:description`,
-          content: metaDescription
-        },
-        {
-          property: `og:type`,
-          content: `website`
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.twitter
-        },
-        {
-          name: `twitter:title`,
-          content: title
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription
-        }
-      ].concat(meta)}
-    />
-  );
+  // <Helmet
+  //   htmlAttributes={{
+  //     lang
+  //   }}
+  //   title={title}
+  //   titleTemplate={`%s | ${site.title}`}
+  //   meta={[
+  //     {
+  //       name: `description`,
+  //       content: metaDescription
+  //     },
+  //     {
+  //       property: `og:title`,
+  //       content: title
+  //     },
+  //     {
+  //       property: `og:description`,
+  //       content: metaDescription
+  //     },
+  //     {
+  //       property: `og:type`,
+  //       content: `website`
+  //     },
+  //     {
+  //       name: `twitter:card`,
+  //       content: `summary`
+  //     },
+  //     {
+  //       name: `twitter:creator`,
+  //       content: site.twitter
+  //     },
+  //     {
+  //       name: `twitter:title`,
+  //       content: title
+  //     },
+  //     {
+  //       name: `twitter:description`,
+  //       content: metaDescription
+  //     }
+  //   ].concat(meta)}
+  // />
+  return <></>;
 }
 
 SEO.defaultProps = {

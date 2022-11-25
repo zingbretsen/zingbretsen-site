@@ -1,15 +1,16 @@
 import React from 'react';
-import { Link, navigate } from 'gatsby';
+import Link from 'next/link';
 
-const BlogPostCard = ({ post }) => {
-  const { path, title } = post.frontmatter;
+const BlogPostCard = ({ title, path, excerpt }) => {
   return (
-    <li className="blogpost" key={path} onClick={() => navigate(path)}>
-      <div>
-        <Link to={path}>{title}</Link>
-        <p>{post.excerpt}</p>
-      </div>
-    </li>
+    <Link href={path}>
+      <li className="blogpost" key={path}>
+        <div>
+          <h5>{title}</h5>
+          <p>{excerpt} </p>
+        </div>
+      </li>
+    </Link>
   );
 };
 

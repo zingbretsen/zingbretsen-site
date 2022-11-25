@@ -1,0 +1,73 @@
+[
+  {
+    "path": "list-files-installed-ubuntu",
+    "date": "2021-11-24",
+    "title": "List Files Installed by a Package with dpkg",
+    "tags": ["quick-byte", "ubuntu", "linux", "dpkg"],
+    "excerpt": "The command `dpkg` has many uses beyond installing and removing `.deb` files. This includes finding out what files were added to your system when you installed a package...",
+    "active": true
+  },
+  {
+    "path": "on-finishing-projects",
+    "date": "2021-09-20",
+    "title": "On Finishing Projects",
+    "edit": "This used to be a tongue-in-cheek post about not knowing how to finish personal projects, but I think there are useful things to be said about what the goal of projects should be.",
+    "tags": ["quick-byte"],
+    "excerpt": "",
+    "active": false
+  },
+  {
+    "author": "Zach Ingbretsen",
+    "path": "fzf",
+    "date": "2021-11-24",
+    "title": "Using fzf for Fun and Profit",
+    "tags": ["quick-byte", "fzf", "linux"],
+    "excerpt": "",
+    "active": false
+  },
+  {
+    "path": "npm-on-ubuntu",
+    "date": "2020-08-09",
+    "title": "Installing NodeJS and NPM on Ubuntu",
+    "tags": ["npm", "ubuntu", "linux"],
+    "excerpt": "I have faced difficulties using NodeJS and the Node Package Manager (NPM) on Ubuntu, specifically relating to permissions. Here are some workarounds...",
+    "active": true
+  },
+  {
+    "path": "rsync-include-exclude",
+    "date": "2021-10-03",
+    "title": "How to Selectively Copy Files with Rsync",
+    "tags": ["linux", "utils"],
+    "excerpt": "One aspect of rsync that I always struggle with is the syntax for selectively syncing a subset of files. This should help...",
+    "active": true
+  },
+  {
+    "path": "tensorflow-gpu-ubuntu",
+    "date": "2020-08-09",
+    "title": "Configuring Tensorflow with GPU on Ubuntu 20.04",
+    "excerpt": "",
+    "active": false
+  },
+  {
+    "path": "tmux",
+    "date": "2021-03-09",
+    "title": "tmux: The Terminal App You Didn't Know You Needed",
+    "excerpt": "",
+    "active": false
+  },
+  {
+    "path": "vim-gives-you-superpowers",
+    "date": "2021-02-21",
+    "title": "Vim Gives You Superpowers",
+    "tags": ["vim", "superpowers"],
+    "excerpt": "",
+    "active": false
+  },
+  {
+    "path": "embracing-vim-modes",
+    "date": "2021-02-27",
+    "title": "Embracing Vim Modes",
+    "excerpt": "",
+    "active": false
+  }
+]

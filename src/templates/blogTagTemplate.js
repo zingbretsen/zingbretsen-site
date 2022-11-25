@@ -3,7 +3,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '../components/layout';
 
-import { Link, graphql } from 'gatsby';
+import { Link } from 'next/link';
 
 import BlogPostCard from '../components/blogpostcard';
 
@@ -31,19 +31,10 @@ const Tags = ({ pageContext, data }) => {
 
 export default Tags;
 
-export const pageQuery = graphql`
-  query($tag: String) {
-    allMdx(limit: 2000, filter: { frontmatter: { tags: { in: [$tag] } } }) {
-      totalCount
-      edges {
-        node {
-          frontmatter {
-            path
-            title
-          }
-          excerpt
-        }
-      }
-    }
-  }
-`;
+export async function getStaticProps(context) {
+  const pageContext = {};
+  const data = [];
+  return {
+    props: { pageContext, data } // will be passed to the page component as props
+  };
+}
