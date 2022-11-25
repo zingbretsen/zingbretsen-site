@@ -33,13 +33,20 @@ export async function getStaticPaths() {
   let tags = [];
   let posts = getBlogPosts();
 
+  if (typeof posts == 'undefined') {
+    return { paths: [], fallback: true };
+  }
+
   posts.map((p) => {
     if (typeof p.tags != 'undefined') {
       p.tags.map((t) => tags.push(t));
     }
   });
 
-  tags = Array.from(new Set(tags)).map((t) => `/tags/${t}`);
+  tags = Array.from(new Set(tags));
+  if (typeof tags != 'undefined') {
+    tags = tags.map((t) => `/tags/${t}`);
+  }
 
   return { paths: tags, fallback: true };
 }
