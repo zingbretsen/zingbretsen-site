@@ -48,7 +48,7 @@ export async function getStaticPaths() {
     tags = tags.map((t) => `/tags/${t}`);
   }
 
-  return { paths: tags, fallback: true };
+  return { paths: tags, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
