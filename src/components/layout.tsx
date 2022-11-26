@@ -41,6 +41,7 @@ const Layout = ({ children, banner, meta }) => {
         <title>{title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta charSet="utf-8" />
+        <meta lang="en" />
       </Head>
       <Header />
       <div className={banner_class}>{banner}</div>
