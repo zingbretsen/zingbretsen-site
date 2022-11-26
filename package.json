@@ -46,7 +46,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "npm run develop",
-    "lint": "eslint --fix .",
+    "lint": "eslint . --fix --ext .ts",
     "serve": "next serve",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
