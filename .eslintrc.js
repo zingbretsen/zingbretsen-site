@@ -1,14 +1,20 @@
 module.exports = {
   extends: [
+    'plugin:prettier/recommended',
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
-    'plugin:prettier/recommended'
+    'plugin:@next/next/recommended'
   ],
   env: {
     es6: true,
     node: true,
     browser: true
   },
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
   parserOptions: {
     ecmaVersion: 8,
     sourceType: 'module',

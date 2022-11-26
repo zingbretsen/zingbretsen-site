@@ -7,7 +7,7 @@ import BlogPostCard from '../src/components/blogpostcard';
 
 const BlogPage = ({ posts }) => {
   return (
-    <Layout title="Blog">
+    <Layout meta={{ title: 'Blog Posts' }}>
       <ul className="blogposts">
         {posts.map((d) => {
           return (

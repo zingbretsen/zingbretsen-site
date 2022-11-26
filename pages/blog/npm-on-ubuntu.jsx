@@ -40,7 +40,7 @@ npm ERR! errno -13
 npm ERR! Error: EACCES: permission denied, access '/usr/local/lib/node_modules'
 npm ERR!  { [Error: EACCES: permission denied, access '/usr/local/lib/node_modules']
 npm ERR!   stack:
-npm ERR!    'Error: EACCES: permission denied, access \'/usr/local/lib/node_modules\'',
+npm ERR!    'Error: EACCES: permission denied, access '/usr/local/lib/node_modules'',
 npm ERR!   errno: -13,
 npm ERR!   code: 'EACCES',
 npm ERR!   syscall: 'access',

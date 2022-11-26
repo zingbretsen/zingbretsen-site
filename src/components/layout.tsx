@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Link from 'next/link';
+import Head from 'next/head';
 
 import Header from './header';
 import Footer from './footer';
@@ -33,15 +34,21 @@ const Layout = ({ children, banner, meta }) => {
       );
   }
 
+  const title: string = typeof meta?.title != 'undefined' ? meta.title : 'Zach Ingbretsen';
   return (
     <div id="app">
+      <Head>
+        <title>{title}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta charSet="utf-8" />
+      </Head>
       <Header />
       <div className={banner_class}>{banner}</div>
       <div className="container">
         <article>
           {typeof meta !== 'undefined' ? (
             <>
-              <h1 className="blogtitle">{meta.title}</h1>
+              <h1 className="blogtitle">{title}</h1>
               {posted_date}
               {tags}
             </>

@@ -1,8 +1,10 @@
 import React from 'react';
 
+import Image from 'next/image';
+
 const Rightimage = ({ src }) => (
   <div className="right">
-    <img src={src} />
+    <Image src={src} />
   </div>
 );
 
