@@ -5,19 +5,13 @@
   "version": "0.1.0",
   "author": "Zach Ingbretsen <zach@zingbretsen.com>",
   "dependencies": {
-    "@mdx-js/loader": "^2.1.2",
-    "@mdx-js/mdx": "2.1.2",
-    "@mdx-js/react": "2.1.2",
-    "@next/mdx": "^12.1.6",
     "eslint-plugin-next": "^0.0.0",
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
-    "next": ">=10.2.0",
-    "next-mdx-remote": "^4.1.0",
+    "next": "<13.0.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-highlight": "^0.14.0",
-    "remark-frontmatter": "^4.0.1",
     "theme-ui": "0.14.6",
     "typography": "0.16.21",
     "typography-theme-parnassus": "0.16.19"
@@ -36,6 +30,10 @@
     "prettier": "*",
     "typescript": "^4.7.4",
     "undefined": "*"
+  },
+  "engines": {
+    "npm": ">=7.0.0 <9.0.0",
+    "node": ">=14.0.0 <15.0.0"
   },
   "keywords": [
     "next",

@@ -26,14 +26,22 @@ const BlogPage = ({ tags_count }) => {
 
 export default BlogPage;
 
+interface blog_meta {
+  title: String;
+  tags?: [String];
+  date: String;
+  path: String;
+  excerpt: String;
+  active: Boolean;
+  edit?: String;
+}
+
 export async function getStaticProps() {
   let tags = [];
-  let posts = getBlogPosts().filter((p) => p.active);
+  let posts = getBlogPosts().filter((p: blog_meta) => p.active);
 
   posts.map((p) => {
-    if (typeof p.tags != 'undefined') {
-      p.tags.map((t) => tags.push(t));
-    }
+    p.tags?.map((t: String) => tags.push(t));
   });
 
   let tags_hash = new Map();
