@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { getBlogPosts } from '../../src/utils/getblog';
+import { getBlogPosts, blog_meta } from '../../src/utils/getblog';
 
 import Link from 'next/link';
 
@@ -30,30 +30,21 @@ const BlogPost = ({ tag, posts }) => {
 export default BlogPost;
 
 export async function getStaticPaths() {
-  let tags = [];
-  let posts = getBlogPosts();
-
-  if (typeof posts == 'undefined') {
-    return { paths: [], fallback: true };
-  }
+  const tags: string[] = [];
+  const posts = getBlogPosts();
 
   posts.map((p) => {
-    if (typeof p.tags != 'undefined') {
-      p.tags.map((t) => tags.push(t));
-    }
+    p.tags?.map((t) => tags.push(t));
   });
 
-  tags = Array.from(new Set(tags));
-  if (typeof tags != 'undefined') {
-    tags = tags.map((t) => `/tags/${t}`);
-  }
+  const paths = [...tags].map((t) => `/tags/${t}`);
 
-  return { paths: tags, fallback: false };
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
-  let { tag } = params;
-  let posts = getBlogPosts()
+  const { tag } = params;
+  const posts: blog_meta[] = getBlogPosts()
     .filter((p) => p.active)
     .filter((p) => {
       if (typeof p.tags != 'undefined') {
@@ -61,6 +52,6 @@ export async function getStaticProps({ params }) {
       }
       return false;
     })
-    .sort((a, b) => a.date < b.date);
+    .sort((a, b) => Number(a.date < b.date));
   return { props: { tag, posts } };
 }

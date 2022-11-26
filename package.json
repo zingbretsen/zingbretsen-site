@@ -21,8 +21,7 @@
     "@types/react": "^18.0.14",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
-    "eslint": "*",
-    "eslint-config-airbnb": "*",
+    "eslint": ">8.5.0",
     "eslint-config-next": "*",
     "eslint-config-prettier": "*",
     "eslint-plugin-jsx-a11y": "*",
@@ -46,7 +45,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "npm run develop",
-    "lint": "eslint . --fix --ext .ts",
+    "lint": "eslint --fix --ext .ts --ext .tsx --ext js --ext jsx .",
     "serve": "next serve",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },

@@ -26,34 +26,24 @@ const BlogPage = ({ tags_count }) => {
 
 export default BlogPage;
 
-interface blog_meta {
-  title: String;
-  tags?: [String];
-  date: String;
-  path: String;
-  excerpt: String;
-  active: Boolean;
-  edit?: String;
-}
-
 export async function getStaticProps() {
   let tags = [];
-  let posts = getBlogPosts().filter((p: blog_meta) => p.active);
+  const posts = getBlogPosts().filter((p) => p.active);
 
   posts.map((p) => {
-    p.tags?.map((t: String) => tags.push(t));
+    p.tags?.map((t: string) => tags.push(t));
   });
 
-  let tags_hash = new Map();
+  const tags_hash = new Map();
   for (let i = 0; i < tags.length; i++) {
     tags_hash.set(tags[i], (tags_hash.get(tags[i]) | 0) + 1);
   }
 
   tags = Array.from(new Set(tags));
 
-  let tags_count = [];
+  const tags_count = [];
   for (let i = 0; i < tags.length; i++) {
-    let t = tags[i];
+    const t = tags[i];
     tags_count.push([t, tags_hash.get(t)]);
   }
 

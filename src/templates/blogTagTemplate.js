@@ -1,5 +1,4 @@
 import React from 'react';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '../components/layout';
 
@@ -31,7 +30,7 @@ const Tags = ({ pageContext, data }) => {
 
 export default Tags;
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const pageContext = {};
   const data = [];
   return {
