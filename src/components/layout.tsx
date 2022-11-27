@@ -19,12 +19,13 @@ import { useEffect } from 'react';
 const Layout = ({ children, banner, meta }) => {
   const banner_class = typeof banner != 'undefined' ? 'alert alert-warning' : 'hidden';
 
-  useEffect(() => {
-    hljs.initHighlighting();
-  }, []);
   hljs.registerLanguage('javascript', javascript);
   hljs.registerLanguage('bash', bash);
   hljs.registerLanguage('python', python);
+
+  useEffect(() => {
+    hljs.highlightAll();
+  }, []);
 
   let posted_date = <></>;
   let tags = <></>;
