@@ -24,15 +24,6 @@ body {
   background-color: var(--light-gray);
 }
 
-.deckgo-highlight-code-container > code {
-  background-color: var(--light-gray);
-}
-
-code {
-  font-size: 1.1rem;
-  color: #aa4443;
-}
-
 nav {
   height: 3rem;
   display: flex;
