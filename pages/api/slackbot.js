@@ -5,7 +5,7 @@ const app = new App({
   signingSecret: process.env.SLACK_SIGNING_SECRET,
 });
 
-app.command('/ping', async ({ command, ack, say }) => {
+app.command('/ping', async ({ ack, say }) => {
   // Acknowledge command request
   await ack();
 
