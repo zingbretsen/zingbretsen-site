@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Zach Ingbretsen <zach@zingbretsen.com>",
   "dependencies": {
+    "@slack/bolt": "^3.17.0",
+    "caniuse-lite": "^1.0.30001572",
     "eslint-plugin-next": "^0.0.0",
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
@@ -18,24 +20,24 @@
     "typography-theme-parnassus": "0.16.19"
   },
   "devDependencies": {
-    "@types/node": "^18.0.0",
-    "@types/react": "^18.0.14",
-    "@typescript-eslint/eslint-plugin": "^5.44.0",
-    "@typescript-eslint/parser": "^5.44.0",
-    "eslint": ">8.5.0",
-    "eslint-config-next": "*",
-    "eslint-config-prettier": "*",
-    "eslint-plugin-jsx-a11y": "*",
-    "eslint-plugin-prettier": "*",
-    "eslint-plugin-react": "*",
+    "@types/node": "^18.19.3",
+    "@types/react": "^18.2.46",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-prettier": "^5.1.2",
+    "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "*",
-    "prettier": "*",
-    "typescript": "^4.7.4",
+    "prettier": "^3.1.1",
+    "typescript": "^4.9.5",
     "undefined": "*"
   },
   "engines": {
-    "npm": ">=7.0.0 <9.0.0",
-    "node": ">=14.0.0 <15.0.0"
+    "npm": ">=7.0.0",
+    "node": ">=18.0.0"
   },
   "keywords": [
     "next",
