@@ -64,6 +64,7 @@ const Layout = ({ children, banner, meta }) => {
           rel="stylesheet"
           href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/default.min.css"
         ></link>
+        <script async src="https://us.umami.is/script.js" data-website-id="66715534-96cd-4cc8-8c0d-1c9e3877b481"></script>
       </Head>
       <Header />
       <div className={banner_class}>{banner}</div>
