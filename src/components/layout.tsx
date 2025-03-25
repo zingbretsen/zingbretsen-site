@@ -18,7 +18,7 @@ const Layout = ({
   meta
 }: {
   children: React.ReactNode;
-  banner: string;
+  banner?: string;
   meta: any;
 }) => {
   const banner_class = typeof banner != 'undefined' ? 'alert alert-warning' : 'hidden';

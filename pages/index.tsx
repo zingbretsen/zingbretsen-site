@@ -6,7 +6,7 @@ import Layout from '../src/components/layout';
 
 export default function Home() {
   return (
-    <Layout title="Home">
+    <Layout meta={{ title: 'Zing' }}>
       <h1>&gt; whoami</h1>
       <p>
         Professional nerd, foodie, and photographer. I am a data scientist with a passion for

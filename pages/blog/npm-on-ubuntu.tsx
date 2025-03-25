@@ -5,7 +5,7 @@ import { getBlogPosts } from '../../src/utils/getblog';
 const slug = 'npm-on-ubuntu';
 
 const BlogPost = ({ meta }) => (
-  <Layout title="Blog" meta={meta}>
+  <Layout meta={meta}>
     <p>
       If you are developing websites in 2020 it is highly likely that NodeJS forms at least part of
       your toolchain. Whether you&apos;re developing on the backend or frontend, NodeJS plays an
