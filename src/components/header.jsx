@@ -7,14 +7,10 @@ export default function Header() {
       <p className="brand">Zach Ingbretsen</p>
       <ul>
         <li>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
+          <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/blog/">
-            <a>Blog</a>
-          </Link>
+          <Link href="/blog/">Blog</Link>
         </li>
       </ul>
     </nav>

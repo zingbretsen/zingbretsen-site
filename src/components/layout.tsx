@@ -40,7 +40,7 @@ const Layout = ({ children, banner, meta }) => {
           {typeof meta.tags != 'undefined' ? (
             meta.tags.map((tag) => (
               <Link key={`/tags/${tag}`} href={`/tags/${tag}`} className="blog-tag">
-                <a className="blog-tag">{tag}</a>
+                {tag}
               </Link>
             ))
           ) : (
