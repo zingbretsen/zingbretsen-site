@@ -4,7 +4,6 @@ import Typography from 'typography';
 import parnassusTheme from 'typography-theme-parnassus';
 
 import '../styles/globals.css';
-import '../src/components/layout.css';
 import 'highlight.js/styles/a11y-dark.css';
 
 const typography = new Typography(parnassusTheme);

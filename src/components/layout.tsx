@@ -6,7 +6,6 @@ import Head from 'next/head';
 import Header from './header';
 import Footer from './footer';
 
-import 'highlight.js/styles/default.css';
 import bash from 'highlight.js/lib/languages/bash';
 import python from 'highlight.js/lib/languages/python';
 import hljs from 'highlight.js';

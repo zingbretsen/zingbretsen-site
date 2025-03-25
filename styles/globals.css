@@ -1,26 +1,4 @@
-html,
-body {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
-    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-body {
-  min-height: 100vh;
-  position: relative;
-}
-
-a {
-  /* color: inherit; */
-  /* text-decoration: none; */
-  /* box-shadow: none; */
-}
-
-* {
-  box-sizing: border-box;
-}
+@import "tailwindcss";
 
 :root {
   --light-gray: #fafafa;
@@ -31,19 +9,74 @@ a {
   --viridis-4: #fde725ff;
 }
 
-/* html { */
-/*   font-family: sans-serif; */
-/*   -ms-text-size-adjust: 100%; */
-/*   -webkit-text-size-adjust: 100%; */
-/* } */
+/* Base styles */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+}
 
-/* body { */
-/*   margin: 0; */
-/*   -webkit-font-smoothing: antialiased; */
-/*   -moz-osx-font-smoothing: grayscale; */
-/*   background-color: var(--light-gray); */
-/* } */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--light-gray);
+}
 
+* {
+  box-sizing: border-box;
+}
+
+a {
+  box-shadow: none;
+}
+
+/* Layout */
+#app {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+}
+
+#app > nav {
+  grid-area: header;
+}
+
+#app > main {
+  grid-area: main;
+  padding: 15px 5px 10px 5px;
+}
+
+#app > footer {
+  grid-area: footer;
+}
+
+.container {
+  color: #000000cc;
+  max-width: 60rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0em;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Navigation */
 nav {
   height: 3rem;
   display: flex;
@@ -63,15 +96,22 @@ nav p.brand {
   text-align: center;
   color: var(--viridis-2);
   text-decoration: none;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding: 0.5rem;
 }
 
 nav a:hover {
   background-color: var(--lighter-gray);
   color: var(--viridis-1);
+}
+
+.active p {
+  background-color: 'black';
+  border-bottom: 2px solid var(--viridis-2);
+}
+
+/* Blog styles */
+h1 {
+  margin-top: 1em;
 }
 
 li.blogpost {
@@ -101,50 +141,6 @@ li.blogpost a {
   margin-top: 0px;
 }
 
-.alert {
-  margin: 0 0 0 0;
-  padding: 0.5rem;
-}
-
-.alert-warning {
-  background-color: #fff0cd;
-  color: #454500cc;
-  border-color: #ffeeba;
-  border-bottom: 1px solid hsla(0, 0%, 0%, 0.25);
-}
-
-.active p {
-  background-color: 'black';
-  border-bottom: 2px solid var(--viridis-2);
-}
-
-.container {
-  color: #000000cc;
-  max-width: 60rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0em;
-}
-
-img.whoami-image {
-  padding: 1em;
-  border-radius: 5em;
-}
-
-@media (min-width: 600px) {
-  img.whoami-image {
-    float: right;
-    max-width: 350px;
-  }
-}
-
-.headerimg {
-  width: 100%;
-  max-height: 100px;
-}
-
 p.blogdate {
   margin-bottom: 1em;
 }
@@ -162,48 +158,46 @@ p.edit-message {
   color: #555;
 }
 
+.blog-link {
+  margin-bottom: 10em;
+}
+
+/* Images */
+img.whoami-image {
+  padding: 1em;
+  border-radius: 5em;
+}
+
+.headerimg {
+  width: 100%;
+  max-height: 100px;
+}
+
+/* Alerts */
+.alert {
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.alert-warning {
+  background-color: #fff0cd;
+  color: #454500cc;
+  border-color: #ffeeba;
+  border-bottom: 1px solid hsla(0, 0%, 0%, 0.25);
+}
+
+/* Media queries */
+@media (min-width: 600px) {
+  img.whoami-image {
+    float: right;
+    max-width: 350px;
+  }
+}
+
 @media (min-width: 400px) {
   div.right {
     float: right;
     width: 200px;
     margin-left: 20px;
   }
-}
-
-.blog-link {
-  margin-bottom: 10em;
-}
-
-#app {
-  height: 100vh;
-
-  /* grid container settings */
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas:
-    'header'
-    'main'
-    'footer';
-}
-
-  #app > nav {
-  grid-area: header;
-}
-
-  #app > main {
-  grid-area: main;
-  padding: 15px 5px 10px 5px;
-}
-
-  #app > footer {
-  grid-area: footer;
-}
-
-.hidden {
-  display: none;
-}
-
-h1 {
-  margin-top: 1em;
 }

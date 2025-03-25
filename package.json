@@ -5,13 +5,16 @@
   "version": "0.1.0",
   "author": "Zach Ingbretsen <zach@zingbretsen.com>",
   "dependencies": {
+    "@tailwindcss/postcss": "^4.0.16",
     "fs": "*",
     "gray-matter": ">=4.0.3",
     "highlight.js": ">=11.9.0",
     "next": "^15.2.4",
+    "postcss": "^8.5.3",
     "react": ">=18.2.0",
     "react-dom": ">=18.2.0",
     "react-highlight": ">=0.15.0",
+    "tailwindcss": "^4.0.16",
     "theme-ui": ">=0.17.2",
     "typography": ">=0.16.24",
     "typography-theme-parnassus": ">=0.16.19"
