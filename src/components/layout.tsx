@@ -63,11 +63,6 @@ const Layout = ({
         <title>{title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta charSet="utf-8" />
-        <script
-          async
-          src="https://us.umami.is/script.js"
-          data-website-id="66715534-96cd-4cc8-8c0d-1c9e3877b481"
-        ></script>
       </Head>
       <Header />
       <div className={banner_class}>{banner}</div>
