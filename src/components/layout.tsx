@@ -15,13 +15,18 @@ import { useEffect } from 'react';
 const Layout = ({
   children,
   banner,
-  meta
+  meta,
+  title
 }: {
   children: React.ReactNode;
   banner?: string;
-  meta: any;
+  meta?: any;
+  title?: string;
 }) => {
-  const banner_class = typeof banner != 'undefined' ? 'alert alert-warning' : 'hidden';
+  const banner_class =
+    typeof banner != 'undefined'
+      ? 'bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-4'
+      : 'hidden';
 
   hljs.registerLanguage('javascript', javascript);
   hljs.registerLanguage('bash', bash);
@@ -56,7 +61,7 @@ const Layout = ({
       );
   }
 
-  const title: string = typeof meta?.title != 'undefined' ? meta.title : 'Zach Ingbretsen';
+  const blog_title: string = typeof meta?.title != 'undefined' ? meta.title : 'Zach Ingbretsen';
   return (
     <div id="app">
       <Head>
@@ -70,7 +75,7 @@ const Layout = ({
         <article>
           {typeof meta !== 'undefined' ? (
             <>
-              <h1 className="blogtitle">{title}</h1>
+              <h1 className="blogtitle">{blog_title}</h1>
               {posted_date}
               {tags}
             </>

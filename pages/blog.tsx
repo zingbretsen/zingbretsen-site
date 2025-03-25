@@ -7,7 +7,7 @@ import BlogPostCard from '../src/components/blogpostcard';
 
 const BlogPage = ({ posts }) => {
   return (
-    <Layout meta={{ title: 'Zing Blog' }}>
+    <Layout title="Zing Blog" meta={{ title: 'Blog Posts' }}>
       <ul className="blogposts">
         {posts.map((d) => {
           return (
