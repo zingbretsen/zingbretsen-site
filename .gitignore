@@ -91,3 +91,5 @@ amplifytools.xcconfig
 
 /.direnv/
 /.projectile
+
+.next/

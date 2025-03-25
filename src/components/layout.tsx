@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import Link from 'next/link';
 import Head from 'next/head';
@@ -14,9 +13,15 @@ import hljs from 'highlight.js';
 import javascript from 'highlight.js/lib/languages/javascript';
 import { useEffect } from 'react';
 
-// import SEO from './seo.js';
-
-const Layout = ({ children, banner, meta }) => {
+const Layout = ({
+  children,
+  banner,
+  meta
+}: {
+  children: React.ReactNode;
+  banner: string;
+  meta: any;
+}) => {
   const banner_class = typeof banner != 'undefined' ? 'alert alert-warning' : 'hidden';
 
   hljs.registerLanguage('javascript', javascript);
@@ -84,10 +89,6 @@ const Layout = ({ children, banner, meta }) => {
       <Footer />
     </div>
   );
-};
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired
 };
 
 export default Layout;
