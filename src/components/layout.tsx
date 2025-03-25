@@ -59,11 +59,6 @@ const Layout = ({ children, banner, meta }) => {
         <title>{title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta charSet="utf-8" />
-
-        <link
-          rel="stylesheet"
-          href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/default.min.css"
-        ></link>
         <script
           async
           src="https://us.umami.is/script.js"
