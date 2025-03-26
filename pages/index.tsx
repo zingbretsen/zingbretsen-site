@@ -5,9 +5,7 @@ import Layout from '../src/components/layout';
 export default function Home() {
   return (
     <Layout title="Zach Ingbretsen">
-      <h1>
-        <pre className="text-xl">&gt; whoami</pre>
-      </h1>
+      <h1>&gt; whoami</h1>
       <p>
         Professional nerd, foodie, and photographer. I am a data scientist with a passion for
         problem solving, currently working at the intersection of <b>Data Science</b>, <b>DevOps</b>
