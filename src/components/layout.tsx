@@ -41,21 +41,29 @@ const Layout = ({
 
   if (typeof meta != 'undefined') {
     posted_date =
-      typeof meta.date != 'undefined' ? <p className="blogdate">Posted: {meta.date}</p> : <></>;
+      typeof meta.date != 'undefined' ? (
+        <p className="mb-4 text-gray-700">Posted: {meta.date}</p>
+      ) : (
+        <></>
+      );
     tags =
       typeof meta.tags != 'undefined' ? (
-        <p>
-          Tags:{' '}
+        <div className="mb-4">
+          <span className="text-gray-700">Tags: </span>
           {typeof meta.tags != 'undefined' ? (
             meta.tags.map((tag) => (
-              <Link key={`/tags/${tag}`} href={`/tags/${tag}`} className="blog-tag">
+              <Link
+                key={`/tags/${tag}`}
+                href={`/tags/${tag}`}
+                className="mr-2 text-[var(--viridis-2)] hover:text-[var(--viridis-1)]"
+              >
                 {tag}
               </Link>
             ))
           ) : (
             <></>
           )}
-        </p>
+        </div>
       ) : (
         <></>
       );
@@ -63,7 +71,10 @@ const Layout = ({
 
   const blog_title: string = typeof meta?.title != 'undefined' ? meta.title : 'Zach Ingbretsen';
   return (
-    <div id="app">
+    <div
+      id="app"
+      className="h-screen grid grid-cols-1 grid-rows-[auto_1fr_auto] grid-areas-[header_main_footer]"
+    >
       <Head>
         <title>{title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -71,11 +82,11 @@ const Layout = ({
       </Head>
       <Header />
       <div className={banner_class}>{banner}</div>
-      <div className="container">
+      <div className="text-[#000000cc] max-w-[60rem] px-8 mx-auto mt-0">
         <article>
           {typeof meta !== 'undefined' ? (
             <>
-              <h1 className="blogtitle">{blog_title}</h1>
+              <h1 className="mt-4 text-2xl font-bold">{blog_title}</h1>
               {posted_date}
               {tags}
             </>
