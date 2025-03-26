@@ -1,12 +1,10 @@
 import React from 'react';
-// import Image from 'next/image';
-// import styles from '../styles/Home.module.css';
 
 import Layout from '../src/components/layout';
 
 export default function Home() {
   return (
-    <Layout title="Home">
+    <Layout title="Zach Ingbretsen">
       <h1>&gt; whoami</h1>
       <p>
         Professional nerd, foodie, and photographer. I am a data scientist with a passion for

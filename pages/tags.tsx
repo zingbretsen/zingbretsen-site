@@ -9,14 +9,14 @@ import Link from 'next/link';
 const BlogPage = ({ tags_count }) => {
   return (
     <Layout meta={{ title: 'Blog Tags' }} banner={undefined}>
-      <ul className="taglist">
+      <ul className="space-y-2 list-none mt-4">
         {tags_count.map((d) => {
           return (
-            <Link key={d[0]} href={`tags/${d[0]}`}>
-              <p>
-                <a href={`tags/${d[0]}`}>{`${d[0]} (${d[1]})`}</a>
-              </p>
-            </Link>
+            <li key={d[0]} className="hover:text-[var(--viridis-1)]">
+              <Link href={`tags/${d[0]}`}>
+                <span className="text-[var(--viridis-2)]">{`${d[0]} (${d[1]})`}</span>
+              </Link>
+            </li>
           );
         })}
       </ul>

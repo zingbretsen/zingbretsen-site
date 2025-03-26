@@ -7,8 +7,8 @@ import BlogPostCard from '../src/components/blogpostcard';
 
 const BlogPage = ({ posts }) => {
   return (
-    <Layout meta={{ title: 'Blog Posts' }}>
-      <ul className="blogposts">
+    <Layout title="Zing Blog" meta={{ title: 'Blog Posts' }}>
+      <ul className="space-y-2">
         {posts.map((d) => {
           return (
             <BlogPostCard
@@ -29,7 +29,7 @@ export default BlogPage;
 export async function getStaticProps() {
   let frontmatters = getBlogPosts()
     .filter((p) => p.active)
-    .sort((a, b) => a.date < b.date);
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return {
     props: { posts: frontmatters }

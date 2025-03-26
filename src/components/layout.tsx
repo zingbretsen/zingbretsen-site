@@ -6,7 +6,6 @@ import Head from 'next/head';
 import Header from './header';
 import Footer from './footer';
 
-import 'highlight.js/styles/default.css';
 import bash from 'highlight.js/lib/languages/bash';
 import python from 'highlight.js/lib/languages/python';
 import hljs from 'highlight.js';
@@ -16,13 +15,18 @@ import { useEffect } from 'react';
 const Layout = ({
   children,
   banner,
-  meta
+  meta,
+  title
 }: {
   children: React.ReactNode;
-  banner: string;
-  meta: any;
+  banner?: string;
+  meta?: any;
+  title?: string;
 }) => {
-  const banner_class = typeof banner != 'undefined' ? 'alert alert-warning' : 'hidden';
+  const banner_class =
+    typeof banner != 'undefined'
+      ? 'bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-4'
+      : 'hidden';
 
   hljs.registerLanguage('javascript', javascript);
   hljs.registerLanguage('bash', bash);
@@ -37,46 +41,52 @@ const Layout = ({
 
   if (typeof meta != 'undefined') {
     posted_date =
-      typeof meta.date != 'undefined' ? <p className="blogdate">Posted: {meta.date}</p> : <></>;
+      typeof meta.date != 'undefined' ? (
+        <p className="mb-4 text-gray-700">Posted: {meta.date}</p>
+      ) : (
+        <></>
+      );
     tags =
       typeof meta.tags != 'undefined' ? (
-        <p>
-          Tags:{' '}
+        <div className="mb-4">
+          <span className="text-gray-700">Tags: </span>
           {typeof meta.tags != 'undefined' ? (
             meta.tags.map((tag) => (
-              <Link key={`/tags/${tag}`} href={`/tags/${tag}`} className="blog-tag">
+              <Link
+                key={`/tags/${tag}`}
+                href={`/tags/${tag}`}
+                className="mr-2 text-[var(--viridis-2)] hover:text-[var(--viridis-1)]"
+              >
                 {tag}
               </Link>
             ))
           ) : (
             <></>
           )}
-        </p>
+        </div>
       ) : (
         <></>
       );
   }
 
-  const title: string = typeof meta?.title != 'undefined' ? meta.title : 'Zach Ingbretsen';
+  const blog_title: string = typeof meta?.title != 'undefined' ? meta.title : 'Zach Ingbretsen';
   return (
-    <div id="app">
+    <div
+      id="app"
+      className="h-screen grid grid-cols-1 grid-rows-[auto_1fr_auto] grid-areas-[header_main_footer]"
+    >
       <Head>
         <title>{title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta charSet="utf-8" />
-        <script
-          async
-          src="https://us.umami.is/script.js"
-          data-website-id="66715534-96cd-4cc8-8c0d-1c9e3877b481"
-        ></script>
       </Head>
       <Header />
       <div className={banner_class}>{banner}</div>
-      <div className="container">
+      <div className="text-[#000000cc] max-w-[60rem] px-8 mx-auto mt-0">
         <article>
           {typeof meta !== 'undefined' ? (
             <>
-              <h1 className="blogtitle">{title}</h1>
+              <h1 className="mt-4 text-2xl font-bold">{blog_title}</h1>
               {posted_date}
               {tags}
             </>

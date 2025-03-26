@@ -7,7 +7,7 @@ const slug = 'rsync-include-exclude';
 
 const BlogPost = ({ meta }) => {
   return (
-    <Layout title="Blog" meta={meta}>
+    <Layout meta={meta}>
       <>
         <p>
           The utility <a href="https://rsync.samba.org/">rsync</a> is fantastic for efficient,

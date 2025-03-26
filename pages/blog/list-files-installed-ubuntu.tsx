@@ -5,7 +5,7 @@ import { getBlogPosts } from '../../src/utils/getblog';
 const slug = 'list-files-installed-ubuntu';
 
 const BlogPost = ({ meta }) => (
-  <Layout title="Blog" meta={meta}>
+  <Layout meta={meta}>
     <p>
       The command <code>dpkg</code> has many uses beyond installing and removing <code>.deb</code>{' '}
       files. This includes finding out what files were added to your system when you installed a
