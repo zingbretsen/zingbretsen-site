@@ -26,14 +26,6 @@
     "active": false
   },
   {
-    "path": "npm-on-ubuntu",
-    "date": "2020-08-09",
-    "title": "Installing NodeJS and NPM on Ubuntu",
-    "tags": ["npm", "ubuntu", "linux"],
-    "excerpt": "I have faced difficulties using NodeJS and the Node Package Manager (NPM) on Ubuntu, specifically relating to permissions. Here are some workarounds...",
-    "active": true
-  },
-  {
     "path": "rsync-include-exclude",
     "date": "2021-10-03",
     "title": "How to Selectively Copy Files with Rsync",
