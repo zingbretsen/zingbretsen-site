@@ -93,3 +93,6 @@ amplifytools.xcconfig
 /.projectile
 
 .next/
+
+# Generated CSS
+styles/typography.css

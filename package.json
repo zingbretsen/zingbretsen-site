@@ -5,6 +5,9 @@
   "version": "0.1.0",
   "author": "Zach Ingbretsen <zach@zingbretsen.com>",
   "dependencies": {
+    "@mdx-js/loader": "^3.1.1",
+    "@mdx-js/react": "^3.1.1",
+    "@next/mdx": "^16.1.6",
     "fs": "*",
     "gray-matter": ">=4.0.3",
     "highlight.js": ">=11.9.0",
@@ -17,6 +20,7 @@
     "typography-theme-parnassus": ">=0.16.19"
   },
   "devDependencies": {
+    "@types/mdx": "^2.0.13",
     "@types/node": "24.9.0",
     "@types/react": "^19.2.1",
     "prettier": "3.2.5",
@@ -32,7 +36,9 @@
   ],
   "license": "MIT",
   "scripts": {
+    "predev": "node scripts/generate-typography.js",
     "dev": "next dev",
+    "prebuild": "node scripts/generate-typography.js",
     "build": "next build",
     "start": "next start",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
