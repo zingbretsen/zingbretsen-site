@@ -1,4 +1,5 @@
 import React from 'react';
+import Script from 'next/script';
 
 import Typography from 'typography';
 import parnassusTheme from 'typography-theme-parnassus';
@@ -17,7 +18,16 @@ typography.toString();
 typography.injectStyles();
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Script
+        src="https://umami.lab.ingbretsenhome.com/script.js"
+        data-website-id="e1c01b04-3d43-485f-9f75-0dd27468372f"
+        strategy="afterInteractive"
+      />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 export default MyApp;
