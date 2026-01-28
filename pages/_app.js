@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Script
-        src="https://umami.lab.ingbretsenhome.com/script.js"
+        src="https://umami.ingbretsenhome.com/script.js"
         data-website-id="e1c01b04-3d43-485f-9f75-0dd27468372f"
         strategy="afterInteractive"
       />
