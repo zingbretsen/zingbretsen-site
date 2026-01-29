@@ -4,15 +4,23 @@ interface BlogPostCardProps {
   title: string;
   path: string;
   date: string;
+  excerpt: string;
+  tags?: string[];
+  featured?: boolean;
 }
 
-export default function BlogPostCard({ title, path, date }: BlogPostCardProps) {
+export default function BlogPostCard({ title, path, date, excerpt, tags, featured }: BlogPostCardProps) {
   return (
-    <li className="blog-list-item">
-      <Link href={path} className="blog-list-link">
-        <h2 className="blog-list-title">{title}</h2>
-        <p className="blog-list-date">{date}</p>
+    <article className={`post-card ${featured ? 'post-card--featured' : ''}`}>
+      <Link href={path} className="post-card__link">
+        {tags && tags.length > 0 && (
+          <span className="post-card__tag">{tags[0]}</span>
+        )}
+        <h2 className="post-card__title">{title}</h2>
+        <p className="post-card__meta">{date}</p>
+        <p className="post-card__excerpt">{excerpt}</p>
+        <span className="post-card__read-more">Read more →</span>
       </Link>
-    </li>
+    </article>
   );
 }

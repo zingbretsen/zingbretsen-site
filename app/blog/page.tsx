@@ -12,16 +12,19 @@ export default function BlogPage() {
   return (
     <>
       <h1>Blog</h1>
-      <ul className="blog-list">
-        {posts.map((post) => (
+      <div className="post-grid">
+        {posts.map((post, index) => (
           <BlogPostCard
             key={post.slug}
             title={post.title}
             path={`/blog/${post.slug}`}
             date={post.date}
+            excerpt={post.excerpt}
+            tags={post.tags}
+            featured={index === 0}
           />
         ))}
-      </ul>
+      </div>
     </>
   );
 }
