@@ -6,12 +6,11 @@ interface BlogPostCardProps {
   date: string;
   excerpt: string;
   tags?: string[];
-  featured?: boolean;
 }
 
-export default function BlogPostCard({ title, path, date, excerpt, tags, featured }: BlogPostCardProps) {
+export default function BlogPostCard({ title, path, date, excerpt, tags }: BlogPostCardProps) {
   return (
-    <article className={`post-card ${featured ? 'post-card--featured' : ''}`}>
+    <article className="post-card">
       <Link href={path} className="post-card__link">
         {tags && tags.length > 0 && (
           <span className="post-card__tag">{tags[0]}</span>

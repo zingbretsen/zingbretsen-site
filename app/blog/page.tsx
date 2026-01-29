@@ -13,7 +13,7 @@ export default function BlogPage() {
     <>
       <h1>Blog</h1>
       <div className="post-grid">
-        {posts.map((post, index) => (
+        {posts.map((post) => (
           <BlogPostCard
             key={post.slug}
             title={post.title}
@@ -21,7 +21,6 @@ export default function BlogPage() {
             date={post.date}
             excerpt={post.excerpt}
             tags={post.tags}
-            featured={index === 0}
           />
         ))}
       </div>
