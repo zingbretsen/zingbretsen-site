@@ -468,7 +468,7 @@ p.edit-message {
 }
 
 #app {
-  height: 100vh;
+  min-height: 100vh;
 
   /* grid container settings */
   display: grid;
