@@ -286,6 +286,27 @@ a {
   color: #ccc;
 }
 
+/* Back link */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+  text-decoration: none;
+  background: var(--light-gray);
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.back-link:hover {
+  background: var(--viridis-2);
+  color: #fff;
+}
+
 .alert {
   margin: 0 0 0 0;
   padding: 0.5rem;
