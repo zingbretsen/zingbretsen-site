@@ -1,14 +1,9 @@
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter';
+import { metadata, type PostMetadata } from '@/content/blog/metadata';
 
-export interface BlogPost {
+export interface BlogPost extends PostMetadata {
   slug: string;
-  title: string;
-  date: string;
-  tags?: string[];
-  excerpt: string;
-  content: string;
 }
 
 const contentDirectory = path.join(process.cwd(), 'content/blog');
@@ -20,41 +15,39 @@ export function getAllPosts(): BlogPost[] {
     .filter((file) => file.endsWith('.mdx'))
     .map((file) => {
       const slug = file.replace(/\.mdx$/, '');
-      const filePath = path.join(contentDirectory, file);
-      const fileContents = fs.readFileSync(filePath, 'utf8');
-      const { data, content } = matter(fileContents);
+      const meta = metadata[slug];
+
+      if (!meta) {
+        return null;
+      }
 
       return {
         slug,
-        title: data.title || slug,
-        date: data.date || '',
-        tags: data.tags || [],
-        excerpt: data.excerpt || '',
-        content,
+        ...meta,
       };
     })
+    .filter((post): post is BlogPost => post !== null)
     .sort((a, b) => (a.date > b.date ? -1 : 1));
 
   return posts;
 }
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
+  const meta = metadata[slug];
+
+  if (!meta) {
+    return undefined;
+  }
+
   const filePath = path.join(contentDirectory, `${slug}.mdx`);
 
   if (!fs.existsSync(filePath)) {
     return undefined;
   }
 
-  const fileContents = fs.readFileSync(filePath, 'utf8');
-  const { data, content } = matter(fileContents);
-
   return {
     slug,
-    title: data.title || slug,
-    date: data.date || '',
-    tags: data.tags || [],
-    excerpt: data.excerpt || '',
-    content,
+    ...meta,
   };
 }
 
