@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { getAllTags } from '@/utils/blog';
 
 export const metadata: Metadata = {
-  title: 'Blog Tags',
+  title: 'Tags',
 };
 
 export default function TagsPage() {
@@ -12,12 +12,12 @@ export default function TagsPage() {
   return (
     <>
       <h1>Tags</h1>
-      <ul className="taglist">
+      <ul className="tag-list">
         {tags.map(({ tag, count }) => (
-          <li key={tag} className="tag-item">
-            <Link href={`/tags/${tag}`} className="tag-link">
+          <li key={tag} className="tag-list-item">
+            <Link href={`/tags/${tag}`} className="tag-pill">
               {tag}
-              <span className="tag-count">{count}</span>
+              <span className="tag-pill-count">{count}</span>
             </Link>
           </li>
         ))}

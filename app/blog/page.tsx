@@ -3,7 +3,7 @@ import { getAllPosts } from '@/utils/blog';
 import BlogPostCard from '@/components/blogpostcard';
 
 export const metadata: Metadata = {
-  title: 'Blog Posts',
+  title: 'Blog',
 };
 
 export default function BlogPage() {
@@ -11,14 +11,14 @@ export default function BlogPage() {
 
   return (
     <>
-      <h1>Blog Posts</h1>
-      <ul className="blogposts">
+      <h1>Blog</h1>
+      <ul className="blog-list">
         {posts.map((post) => (
           <BlogPostCard
             key={post.slug}
             title={post.title}
             path={`/blog/${post.slug}`}
-            excerpt={post.excerpt}
+            date={post.date}
           />
         ))}
       </ul>

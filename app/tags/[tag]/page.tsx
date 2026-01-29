@@ -27,15 +27,15 @@ export default async function TagPage({ params }: Props) {
 
   return (
     <>
-      <Link href="/tags/">back to tags</Link>
-      <h1>Posts tagged &quot;{tag}&quot;</h1>
-      <ul className="blogposts">
+      <p><Link href="/tags/">&larr; all tags</Link></p>
+      <h1>#{tag}</h1>
+      <ul className="blog-list">
         {posts.map((post) => (
           <BlogPostCard
             key={post.slug}
             title={post.title}
             path={`/blog/${post.slug}`}
-            excerpt={post.excerpt}
+            date={post.date}
           />
         ))}
       </ul>

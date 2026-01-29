@@ -3,15 +3,15 @@ import Link from 'next/link';
 interface BlogPostCardProps {
   title: string;
   path: string;
-  excerpt: string;
+  date: string;
 }
 
-export default function BlogPostCard({ title, path, excerpt }: BlogPostCardProps) {
+export default function BlogPostCard({ title, path, date }: BlogPostCardProps) {
   return (
-    <li className="blogpost">
-      <Link href={path} className="blogpost-link">
-        <h3>{title}</h3>
-        <p>{excerpt}</p>
+    <li className="blog-list-item">
+      <Link href={path} className="blog-list-link">
+        <h2 className="blog-list-title">{title}</h2>
+        <p className="blog-list-date">{date}</p>
       </Link>
     </li>
   );
