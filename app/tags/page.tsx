@@ -10,14 +10,18 @@ export default function TagsPage() {
   const tags = getAllTags();
 
   return (
-    <ul className="taglist">
-      {tags.map(({ tag, count }) => (
-        <Link key={tag} href={`/tags/${tag}`}>
-          <p>
-            {tag} ({count})
-          </p>
-        </Link>
-      ))}
-    </ul>
+    <>
+      <h1>Tags</h1>
+      <ul className="taglist">
+        {tags.map(({ tag, count }) => (
+          <li key={tag} className="tag-item">
+            <Link href={`/tags/${tag}`} className="tag-link">
+              {tag}
+              <span className="tag-count">{count}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }

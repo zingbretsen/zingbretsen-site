@@ -80,31 +80,91 @@ nav a:hover {
   color: var(--viridis-1);
 }
 
+ul.blogposts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 li.blogpost {
   background-color: var(--light-gray);
   list-style-type: none;
-  padding: 1em;
-  border-radius: 15px;
-  margin: 1em;
-  cursor: pointer;
+  border-radius: 10px;
+  margin: 1rem 0;
+  transition: box-shadow 0.2s, transform 0.2s;
 }
 
 li.blogpost:hover {
-  -webkit-box-shadow: 0px 0px 2px 2px var(--viridis-1);
-  -moz-box-shadow: 0px 0px 2px 2px var(--viridis-1);
-  box-shadow: 0px 0px 2px 2px var(--viridis-1);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
 }
 
-li.blogpost > div {
-  margin: 1rem;
-}
-
-li.blogpost a {
+.blogpost-link {
+  display: block;
+  padding: 1.5rem;
   text-decoration: none;
+  color: inherit;
 }
 
-.blogpost h5 {
-  margin-top: 0px;
+.blogpost-link h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--viridis-2);
+  font-size: 1.25rem;
+}
+
+.blogpost-link p {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.blogpost-link:hover h3 {
+  color: var(--viridis-1);
+}
+
+/* Tags page */
+ul.taglist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tag-item {
+  margin: 0;
+}
+
+.tag-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--light-gray);
+  border-radius: 20px;
+  text-decoration: none;
+  color: var(--viridis-2);
+  font-weight: 500;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.tag-link:hover {
+  background-color: var(--viridis-2);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.tag-count {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+}
+
+.tag-link:hover .tag-count {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .alert {
@@ -145,6 +205,42 @@ li.blogpost a {
 pre {
   overflow-x: auto;
   max-width: 100%;
+  position: relative;
+}
+
+.copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+
+@media (min-width: 768px) {
+  .copy-button {
+    opacity: 0;
+  }
+
+  pre:hover .copy-button {
+    opacity: 1;
+  }
+}
+
+.copy-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.copy-button.copied {
+  background-color: var(--viridis-3);
+  color: #fff;
+  border-color: var(--viridis-3);
 }
 
 article {

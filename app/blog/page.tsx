@@ -10,15 +10,18 @@ export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <ul className="blogposts">
-      {posts.map((post) => (
-        <BlogPostCard
-          key={post.slug}
-          title={post.title}
-          path={`/blog/${post.slug}`}
-          excerpt={post.excerpt}
-        />
-      ))}
-    </ul>
+    <>
+      <h1>Blog Posts</h1>
+      <ul className="blogposts">
+        {posts.map((post) => (
+          <BlogPostCard
+            key={post.slug}
+            title={post.title}
+            path={`/blog/${post.slug}`}
+            excerpt={post.excerpt}
+          />
+        ))}
+      </ul>
+    </>
   );
 }

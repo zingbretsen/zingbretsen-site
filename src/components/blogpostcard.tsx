@@ -8,13 +8,11 @@ interface BlogPostCardProps {
 
 export default function BlogPostCard({ title, path, excerpt }: BlogPostCardProps) {
   return (
-    <Link href={path}>
-      <li className="blogpost">
-        <div>
-          <h5>{title}</h5>
-          <p>{excerpt}</p>
-        </div>
-      </li>
-    </Link>
+    <li className="blogpost">
+      <Link href={path} className="blogpost-link">
+        <h3>{title}</h3>
+        <p>{excerpt}</p>
+      </Link>
+    </li>
   );
 }
