@@ -27,8 +27,10 @@ export default async function TagPage({ params }: Props) {
 
   return (
     <>
-      <Link href="/tags/" className="back-link">&larr; all tags</Link>
-      <h1>#{tag}</h1>
+      <div className="tag-page-header">
+        <Link href="/tags/" className="tag-page-header__back">&larr;</Link>
+        <span className="tag-page-header__tag">{tag}</span>
+      </div>
       <div className="post-grid">
         {posts.map((post) => (
           <BlogPostCard
